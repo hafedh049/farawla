@@ -1,7 +1,7 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
-import 'package:highlight/languages/css.dart';
+import 'package:highlight/languages/python.dart';
 
 class FarawlaContainer extends StatefulWidget {
   const FarawlaContainer({super.key});
@@ -11,7 +11,7 @@ class FarawlaContainer extends StatefulWidget {
 }
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
-  final CodeController _codeController = CodeController(language: css);
+  final CodeController _codeController = CodeController(language: python);
   final CodeController _descriptionController = CodeController();
 
   @override
@@ -42,7 +42,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: CodeField(controller: _codeController, maxLines: 8),
+              child: CodeField(controller: _codeController, maxLines: 8, wrap: true),
             ),
             const SizedBox(height: 5),
             ClipRRect(
