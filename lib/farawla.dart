@@ -1,3 +1,4 @@
+import 'package:farawla/farawla_container.dart';
 import 'package:flutter/material.dart';
 
 class Farawla extends StatefulWidget {
@@ -14,7 +15,7 @@ class _FarawlaState extends State<Farawla> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
-          children: <Widget>[for (int i = 0; i < 20; i += 1) FarawlaContainer],
+          children: <Widget>[for (int i = 0; i < 20; i += 1) const FarawlaContainer()],
         ),
       ),
     );
