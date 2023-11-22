@@ -14,10 +14,12 @@ class _FarawelsState extends State<Farawels> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(48),
-        child: Wrap(
-          children: <Widget>[
-            for (int i = 0; i < 10; i += 1) FarawlaContainer(),
-          ],
+        child: SingleChildScrollView(
+          child: Wrap(
+            children: <Widget>[
+              for (int i = 0; i < 20; i += 1) const FarawlaContainer(),
+            ],
+          ),
         ),
       ),
     );
