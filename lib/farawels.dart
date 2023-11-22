@@ -12,10 +12,10 @@ class _FarawelsState extends State<Farawels> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(48),
-        child: Center(
-          child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(48),
+          child: Center(
             child: Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
