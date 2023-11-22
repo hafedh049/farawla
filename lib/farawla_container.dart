@@ -14,20 +14,27 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      hoverColor: transparent,
+      splashColor: transparent,
+      highlightColor: transparent,
       onTap: () {},
       onHover: (bool state) => setState(() => _state = state),
-      child: AnimatedContainer(
-        duration: 2.seconds,
-        margin: const EdgeInsets.all(4),
-        padding: const EdgeInsets.all(16),
-        width: 200,
-        height: 200,
-        decoration: BoxDecoration(
-          color: _state ? blue.withOpacity(.3) : null,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: <BoxShadow>[
-            BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer),
-          ],
+      child: AnimatedScale(
+        duration: 700.ms,
+        scale: _state ? 1.1 : 1,
+        child: AnimatedContainer(
+          duration: 700.ms,
+          margin: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(16),
+          width: 200,
+          height: 200,
+          decoration: BoxDecoration(
+            color: _state ? blue.withOpacity(.3) : null,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: <BoxShadow>[
+              BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer),
+            ],
+          ),
         ),
       ),
     );
