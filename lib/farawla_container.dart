@@ -18,6 +18,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
       onHover: (bool state) => setState(() => _state = state),
       child: AnimatedContainer(
         duration: 2.seconds,
+        margin: const EdgeInsets.all(4),
         padding: const EdgeInsets.all(16),
         width: 200,
         height: 200,
@@ -25,7 +26,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           color: _state ? blue.withOpacity(.3) : null,
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
-            BoxShadow(color: grey, blurRadius: 5, spreadRadius: 5, blurStyle: BlurStyle.outer, offset: Offset(-5, 5)),
+            BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer),
           ],
         ),
       ),
