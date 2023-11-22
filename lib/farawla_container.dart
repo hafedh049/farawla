@@ -41,7 +41,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: CodeField(controller: _codeController, maxLines: 5),
+              child: CodeField(controller: _codeController, maxLines: 8),
             ),
             const SizedBox(height: 5),
             ClipRRect(
