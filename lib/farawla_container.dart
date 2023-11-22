@@ -10,18 +10,19 @@ class FarawlaContainer extends StatefulWidget {
 }
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
+  bool _state = false;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
-      onHover: (bool state) {},
+      onHover: (bool state) => setState(() => _state = state),
       child: AnimatedContainer(
         duration: 2.seconds,
-        margin: const EdgeInsets.all(16),
         padding: const EdgeInsets.all(16),
         width: 200,
         height: 200,
         decoration: BoxDecoration(
+          color: _state ? blue.withOpacity(.3) : null,
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
             BoxShadow(color: grey, blurRadius: 5, spreadRadius: 5, blurStyle: BlurStyle.outer, offset: Offset(-5, 5)),
