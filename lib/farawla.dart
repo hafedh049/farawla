@@ -12,10 +12,12 @@ class _FarawlaState extends State<Farawla> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: <Widget>[for (int i = 0; i < 20; i += 1) const FarawlaContainer()],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: <Widget>[for (int i = 0; i < 20; i += 1) const FarawlaContainer()],
+          ),
         ),
       ),
     );

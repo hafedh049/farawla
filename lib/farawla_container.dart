@@ -31,12 +31,11 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
       onTap: () {},
       onHover: (bool state) => setState(() => _state = state),
       child: AnimatedScale(
-        duration: 700.ms,
-        scale: _state ? 1.1 : 1,
+        duration: 500.ms,
+        scale: _state ? 1.02 : 1,
         child: Container(
           margin: const EdgeInsets.all(4),
           padding: const EdgeInsets.all(16),
-          height: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             boxShadow: <BoxShadow>[
