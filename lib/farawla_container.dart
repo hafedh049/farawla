@@ -1,6 +1,6 @@
-import 'package:code_text_field/code_text_field.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_code_editor/flutter_code_editor.dart';
 import 'package:highlight/languages/python.dart';
 
 class FarawlaContainer extends StatefulWidget {
@@ -43,7 +43,12 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: CodeField(controller: _codeController, maxLines: 8, wrap: true),
+              child: CodeField(
+                controller: _codeController,
+                maxLines: 8,
+                wrap: true,
+                gutterStyle: const GutterStyle(margin: 0, width: 20),
+              ),
             ),
             const SizedBox(height: 5),
             ClipRRect(
@@ -51,7 +56,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
               child: CodeField(
                 controller: _descriptionController,
                 maxLines: 5,
-                lineNumbers: false,
+                wrap: true,
+                gutterStyle: const GutterStyle(margin: 0, width: 20),
               ),
             ),
           ],
