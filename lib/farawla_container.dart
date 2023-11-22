@@ -12,7 +12,7 @@ class FarawlaContainer extends StatefulWidget {
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
   final CodeController _codeController = CodeController();
-  final TextEditingController _descriptionController = TextEditingController();
+  final CodeController _descriptionController = CodeController();
 
   @override
   void dispose() {
@@ -35,7 +35,6 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
         scale: _state ? 1.02 : 1,
         child: Container(
           margin: const EdgeInsets.all(4),
-          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             boxShadow: <BoxShadow>[
@@ -46,8 +45,12 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 300, child: CodeField(controller: _codeController)),
-              SizedBox(height: 500, child: TextField(controller: _descriptionController)),
+              Container(
+                decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15))),
+                child: CodeField(controller: _codeController, maxLines: 3),
+              ),
+              const SizedBox(height: 10),
+              CodeField(controller: _descriptionController, maxLines: 3),
               Container(),
             ],
           ),
