@@ -10,7 +10,7 @@ class FarawlaContainer extends StatefulWidget {
 }
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
-  final CodeController _codeController = CodeController();
+  final CodeController _codeController = CodeController(language: );
   final CodeController _descriptionController = CodeController();
 
   @override
@@ -46,9 +46,12 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
             const SizedBox(height: 5),
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: CodeField(controller: _descriptionController, maxLines: 5),
+              child: CodeField(
+                controller: _descriptionController,
+                maxLines: 5,
+                lineNumbers: false,
+              ),
             ),
-            Container(),
           ],
         ),
       ),
