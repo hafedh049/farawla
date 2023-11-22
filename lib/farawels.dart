@@ -1,7 +1,5 @@
 import 'package:farawla/farawla_container.dart';
-import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class Farawels extends StatefulWidget {
   const Farawels({super.key});
