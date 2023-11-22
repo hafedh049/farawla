@@ -1,6 +1,7 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
+import 'package:highlight/languages/css.dart';
 
 class FarawlaContainer extends StatefulWidget {
   const FarawlaContainer({super.key});
@@ -10,7 +11,7 @@ class FarawlaContainer extends StatefulWidget {
 }
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
-  final CodeController _codeController = CodeController(language: );
+  final CodeController _codeController = CodeController(language: css);
   final CodeController _descriptionController = CodeController();
 
   @override
