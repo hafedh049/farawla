@@ -43,7 +43,10 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
               child: CodeField(controller: _codeController, maxLines: 5),
             ),
             const SizedBox(height: 5),
-            CodeField(controller: _descriptionController, maxLines: 3),
+            Container(
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+              child: CodeField(controller: _descriptionController, maxLines: 3),
+            ),
             Container(),
           ],
         ),
