@@ -13,7 +13,12 @@ class _FarawelsState extends State<Farawels> {
     return Scaffold(
       body: Wrap(
         children: <Widget>[
-          for (int i = 0; i < 10; i += 1) Container(),
+          for (int i = 0; i < 10; i += 1)
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
         ],
       ),
     );
