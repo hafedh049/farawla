@@ -47,9 +47,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
             children: <Widget>[
               Container(
                 decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15))),
-                child: CodeField(controller: _codeController, maxLines: 3),
+                child: CodeField(controller: _codeController, maxLines: 5),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               CodeField(controller: _descriptionController, maxLines: 3),
               Container(),
             ],
