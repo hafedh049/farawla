@@ -39,7 +39,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15))),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
               child: CodeField(controller: _codeController, maxLines: 5),
             ),
             const SizedBox(height: 5),
