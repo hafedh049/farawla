@@ -34,8 +34,9 @@ dependencies:
   go_router: ^12.1.1
   font_awesome_flutter: ^10.6.0
   flutter_animate: ^4.3.0
-  code_text_field: ^1.1.0
   highlight: ^0.7.0
+  flutter_highlight: ^0.7.0
+  flutter_code_editor: ^0.3.1
 
 dev_dependencies:
   flutter_test:
