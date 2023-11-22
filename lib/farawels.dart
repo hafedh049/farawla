@@ -16,6 +16,11 @@ class _FarawelsState extends State<Farawels> {
         padding: const EdgeInsets.all(48),
         child: SingleChildScrollView(
           child: Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runAlignment: WrapAlignment.center,
+            runSpacing: 20,
+            spacing: 20,
             children: <Widget>[
               for (int i = 0; i < 20; i += 1) const FarawlaContainer(),
             ],
