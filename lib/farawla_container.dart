@@ -26,6 +26,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
     return InkWell(
       hoverColor: transparent,
       splashColor: transparent,
+      focusColor: transparent,
       highlightColor: transparent,
       onTap: () {},
       child: Container(
