@@ -1,4 +1,4 @@
-import 'package:farawla/farawla_container.dart';
+import 'package:farawla/farawels_container.dart';
 import 'package:flutter/material.dart';
 
 class Farawels extends StatefulWidget {
@@ -23,7 +23,7 @@ class _FarawelsState extends State<Farawels> {
               runSpacing: 20,
               spacing: 20,
               children: <Widget>[
-                for (int i = 0; i < 20; i += 1) const FarawlaContainer(),
+                for (int i = 0; i < 20; i += 1) const FarawelsContainer(),
               ],
             ),
           ),

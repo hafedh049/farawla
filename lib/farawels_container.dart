@@ -2,14 +2,14 @@ import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class FarawlaContainer extends StatefulWidget {
-  const FarawlaContainer({super.key});
+class FarawelsContainer extends StatefulWidget {
+  const FarawelsContainer({super.key});
 
   @override
-  State<FarawlaContainer> createState() => _FarawlaContainerState();
+  State<FarawelsContainer> createState() => _FarawelsContainerState();
 }
 
-class _FarawlaContainerState extends State<FarawlaContainer> {
+class _FarawelsContainerState extends State<FarawelsContainer> {
   bool _state = false;
   @override
   Widget build(BuildContext context) {
