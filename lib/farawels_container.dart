@@ -1,3 +1,4 @@
+import 'package:farawla/farawla.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -17,7 +18,9 @@ class _FarawelsContainerState extends State<FarawelsContainer> {
       hoverColor: transparent,
       splashColor: transparent,
       highlightColor: transparent,
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const Farawla()));
+      },
       onHover: (bool state) => setState(() => _state = state),
       child: AnimatedScale(
         duration: 700.ms,
