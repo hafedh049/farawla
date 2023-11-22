@@ -28,6 +28,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
       highlightColor: transparent,
       onTap: () {},
       child: Container(
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
@@ -38,14 +39,14 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
               child: CodeField(controller: _codeController, maxLines: 5),
             ),
             const SizedBox(height: 5),
-            Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-              child: CodeField(controller: _descriptionController, maxLines: 3),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: CodeField(controller: _descriptionController, maxLines: 5),
             ),
             Container(),
           ],
