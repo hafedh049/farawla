@@ -12,7 +12,9 @@ class _FarawelsState extends State<Farawels> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Wrap(
-        children: <Widget>[],
+        children: <Widget>[
+          for (int i = 0; i < 10; i += 1) Container(),
+        ],
       ),
     );
   }
