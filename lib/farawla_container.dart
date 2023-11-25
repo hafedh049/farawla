@@ -62,7 +62,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     gutterStyle: const GutterStyle(width: 20),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink)),
+                IconButton(onPressed: () {showModalBottomSheet(context: context, builder: );}, icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink)),
               ],
             ),
             const SizedBox(height: 5),
