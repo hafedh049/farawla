@@ -80,7 +80,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   AnimSearchBar(
                                     width: MediaQuery.sizeOf(context).width,
                                     textController: _searchLanguageController,
-                                    onSuffixTap: () {},
+                                    onSuffixTap: () =>_(()=>),
                                     onSubmitted: (String text) {
                                       Navigator.pop(context);
                                     },
