@@ -67,7 +67,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                       showModalBottomSheet(
                         context: context,
                         builder: (BuildContext context) {
-                          return;
+                          return SizedBox(
+                            height: 300,
+                          );
                         },
                       );
                     },
