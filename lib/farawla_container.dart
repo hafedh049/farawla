@@ -17,6 +17,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
   Mode _language = python;
   late final CodeController _codeController;
   final CodeController _descriptionController = CodeController(params: const EditorParams(tabSpaces: 4));
+  final TextEditingController _searchLanguageController = TextEditingController();
 
   @override
   void initState() {
@@ -26,6 +27,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
 
   @override
   void dispose() {
+    _searchLanguageController.dispose();
     _codeController.dispose();
     _descriptionController.dispose();
     super.dispose();
