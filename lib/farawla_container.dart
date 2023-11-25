@@ -81,7 +81,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   SearchBarAnimation(
                                     textEditingController: _searchLanguageController,
                                     isOriginalAnimation: true,
-                                    buttonWidget: null,
+                                    buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                     trailingWidget: null,
                                     secondaryButtonWidget: null,
                                   ),
