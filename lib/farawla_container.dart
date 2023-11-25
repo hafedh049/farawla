@@ -34,7 +34,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          boxShadow: <BoxShadow>[
+          boxShadow: const <BoxShadow>[
             BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer),
           ],
         ),
@@ -54,13 +54,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     gutterStyle: const GutterStyle(width: 20),
                   ),
                 ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      FontAwesomeIcons.code,
-                      size: 15,
-                      color: pink,
-                    )),
+                IconButton(onPressed: () {}, icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink)),
               ],
             ),
             const SizedBox(height: 5),
