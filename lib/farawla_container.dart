@@ -66,34 +66,35 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                   ),
                 ),
                 IconButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return SizedBox(
-                            height: 300,
-                            child: StatefulBuilder(
-                              builder: (BuildContext context, void Function(void Function()) _) {
-                                return Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    AnimSearchBar(
-                                      width: MediaQuery.sizeOf(context).width,
-                                      textController: _searchLanguageController,
-                                      onSuffixTap: () {},
-                                      onSubmitted: (String text) {
-                                        Navigator.pop(context);
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
-                            ),
-                          );
-                        },
-                      );
-                    },
-                    icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink)),
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return SizedBox(
+                          height: 300,
+                          child: StatefulBuilder(
+                            builder: (BuildContext context, void Function(void Function()) _) {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  AnimSearchBar(
+                                    width: MediaQuery.sizeOf(context).width,
+                                    textController: _searchLanguageController,
+                                    onSuffixTap: () {},
+                                    onSubmitted: (String text) {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
+                ),
               ],
             ),
             const SizedBox(height: 5),
