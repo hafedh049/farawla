@@ -1,3 +1,4 @@
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
@@ -71,7 +72,14 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                             height: 300,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[],
+                              children: <Widget>[
+                                AnimSearchBar(
+                                  width: width,
+                                  textController: textController,
+                                  onSuffixTap: onSuffixTap,
+                                  onSubmitted: onSubmitted,
+                                ),
+                              ],
                             ),
                           );
                         },
