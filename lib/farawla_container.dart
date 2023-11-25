@@ -72,17 +72,21 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                         builder: (BuildContext context) {
                           return SizedBox(
                             height: 300,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                AnimSearchBar(
-                                  width: MediaQuery.sizeOf(context).width,
-                                  textController: _searchLanguageController,
-                                  onSuffixTap: onSuffixTap,
-                                  onSubmitted: onSubmitted,
-                                ),
-                              ],
-                            ),
+                            child: StatefulBuilder(
+                                stream: null,
+                                builder: (context, snapshot) {
+                                  return Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      AnimSearchBar(
+                                        width: MediaQuery.sizeOf(context).width,
+                                        textController: _searchLanguageController,
+                                        onSuffixTap: onSuffixTap,
+                                        onSubmitted: onSubmitted,
+                                      ),
+                                    ],
+                                  );
+                                }),
                           );
                         },
                       );
