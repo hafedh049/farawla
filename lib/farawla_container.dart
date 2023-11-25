@@ -42,6 +42,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Stack(
+              alignment: AlignmentDirectional.topEnd,
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
@@ -52,6 +53,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     gutterStyle: const GutterStyle(width: 20),
                   ),
                 ),
+                IconButton(onPressed: () {}, icon: icon)
               ],
             ),
             const SizedBox(height: 5),
