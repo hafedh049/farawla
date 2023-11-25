@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-Color grey = Colors.grey;
-Color transparent = Colors.transparent;
-Color dark = Colors.black87;
-Color blue = Colors.blue;
+const Color grey = Colors.grey;
+const Color transparent = Colors.transparent;
+const Color dark = Colors.black87;
+const Color blue = Colors.blue;
+const Color pink = Colors.pinkAccent;
