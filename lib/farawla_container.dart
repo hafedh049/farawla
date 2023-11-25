@@ -1,6 +1,7 @@
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:highlight/languages/python.dart';
 
 class FarawlaContainer extends StatefulWidget {
@@ -53,7 +54,13 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     gutterStyle: const GutterStyle(width: 20),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      FontAwesomeIcons.code,
+                      size: 15,
+                      color: pink,
+                    )),
               ],
             ),
             const SizedBox(height: 5),
