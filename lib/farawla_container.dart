@@ -81,7 +81,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                       width: MediaQuery.sizeOf(context).width,
                                       textController: _searchLanguageController,
                                       onSuffixTap: () {},
-                                      onSubmitted: onSubmitted,
+                                      onSubmitted: (String text) {
+                                        Navigator.pop(context);
+                                      },
                                     ),
                                   ],
                                 );
