@@ -2,6 +2,7 @@ import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:highlight/highlight_core.dart';
 import 'package:highlight/languages/python.dart';
 
 class FarawlaContainer extends StatefulWidget {
@@ -12,7 +13,8 @@ class FarawlaContainer extends StatefulWidget {
 }
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
-  final CodeController _codeController = CodeController(language: python, params: const EditorParams(tabSpaces: 4));
+  Mode _language = python;
+  final CodeController _codeController = CodeController(language: _language, params: const EditorParams(tabSpaces: 4));
   final CodeController _descriptionController = CodeController(params: const EditorParams(tabSpaces: 4));
 
   @override
