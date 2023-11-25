@@ -80,8 +80,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                 children: <Widget>[
                                   SearchBarAnimation(
                                     textEditingController: _searchLanguageController,
-                                    isOriginalAnimation: false,
-                                    buttonBorderColour: Colors.black45,
+                                    isOriginalAnimation: true,
                                     buttonWidget: null,
                                     trailingWidget: null,
                                     secondaryButtonWidget: null,
