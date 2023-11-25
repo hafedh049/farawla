@@ -77,12 +77,13 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                               return Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  AnimSearchBar(
-                                    width: MediaQuery.sizeOf(context).width,
-                                    textController: _searchLanguageController,
-                                    onSuffixTap: () => _(() => _searchLanguageController.clear()),
-                                    onSubmitted: (String text) {
-                                      Navigator.pop(context);
+                                  SearchBarAnimation(
+                                    textController: TextEditingController(),
+                                    isOriginalAnimation: false,
+                                    buttonBorderColour: Colors.black45,
+                                    buttonIcon: Icons.search,
+                                    onFieldSubmitted: (String value) {
+                                      debugPrint('onFieldSubmitted value $value');
                                     },
                                   ),
                                 ],
