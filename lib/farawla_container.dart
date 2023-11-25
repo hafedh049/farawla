@@ -77,7 +77,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                               children: <Widget>[
                                 AnimSearchBar(
                                   width: MediaQuery.sizeOf(context).width,
-                                  textController: textController,
+                                  textController: _searchLanguageController,
                                   onSuffixTap: onSuffixTap,
                                   onSubmitted: onSubmitted,
                                 ),
