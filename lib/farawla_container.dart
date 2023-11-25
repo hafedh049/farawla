@@ -41,14 +41,18 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: CodeField(
-                controller: _codeController,
-                maxLines: 8,
-                wrap: true,
-                gutterStyle: const GutterStyle(width: 20),
-              ),
+            Stack(
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: CodeField(
+                    controller: _codeController,
+                    maxLines: 8,
+                    wrap: true,
+                    gutterStyle: const GutterStyle(width: 20),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 5),
             ClipRRect(
