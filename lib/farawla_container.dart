@@ -5,6 +5,7 @@ import 'package:flutter_code_editor/flutter_code_editor.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:highlight/highlight_core.dart';
 import 'package:highlight/languages/python.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 
 class FarawlaContainer extends StatefulWidget {
   const FarawlaContainer({super.key});
@@ -78,7 +79,6 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   SearchBarAnimation(
-                                    textController: TextEditingController(),
                                     isOriginalAnimation: false,
                                     buttonBorderColour: Colors.black45,
                                     buttonIcon: Icons.search,
