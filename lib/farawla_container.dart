@@ -74,7 +74,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 AnimSearchBar(
-                                  width: width,
+                                  width: MediaQuery.sizeOf(context).width,
                                   textController: textController,
                                   onSuffixTap: onSuffixTap,
                                   onSubmitted: onSubmitted,
