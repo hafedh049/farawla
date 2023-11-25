@@ -69,6 +69,10 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                         builder: (BuildContext context) {
                           return SizedBox(
                             height: 300,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[],
+                            ),
                           );
                         },
                       );
