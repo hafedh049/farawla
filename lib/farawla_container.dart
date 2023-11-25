@@ -82,9 +82,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     textEditingController: _searchLanguageController,
                                     isOriginalAnimation: false,
                                     buttonBorderColour: Colors.black45,
-                                    onFieldSubmitted: (String value) {
-                                      debugPrint('onFieldSubmitted value $value');
-                                    },
+                                    buttonWidget: null,
+                                    trailingWidget: null,
+                                    secondaryButtonWidget: null,
                                   ),
                                 ],
                               );
