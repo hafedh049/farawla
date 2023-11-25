@@ -82,8 +82,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     textEditingController: _searchLanguageController,
                                     isOriginalAnimation: true,
                                     buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                                    trailingWidget: null,
-                                    secondaryButtonWidget: null,
+                                    trailingWidget: const Icon(FontAwesomeIcons.x, size: 15),
+                                    secondaryButtonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                   ),
                                 ],
                               );
