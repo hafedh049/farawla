@@ -36,6 +36,8 @@ dependencies:
   highlight: ^0.7.0
   flutter_highlight: ^0.7.0
   flutter_code_editor: ^0.3.1
+  anim_search_bar: ^2.0.3
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:
