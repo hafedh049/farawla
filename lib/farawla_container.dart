@@ -82,7 +82,6 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     textEditingController: _searchLanguageController,
                                     isOriginalAnimation: false,
                                     buttonBorderColour: Colors.black45,
-                                    buttonIcon: Icons.search,
                                     onFieldSubmitted: (String value) {
                                       debugPrint('onFieldSubmitted value $value');
                                     },
