@@ -79,6 +79,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   SearchBarAnimation(
+                                    textEditingController: _searchLanguageController,
                                     isOriginalAnimation: false,
                                     buttonBorderColour: Colors.black45,
                                     buttonIcon: Icons.search,
