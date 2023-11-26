@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:highlight/highlight_core.dart';
+import 'package:highlight/languages/all.dart';
 import 'package:highlight/languages/python.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
@@ -87,7 +88,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   ),
                                   const SizedBox(height: 10),
                                   ListView.builder(
-                                    itemCount: Mode,
+                                    itemCount: allLanguages.length,
                                     itemBuilder: (BuildContext context, int index) {},
                                   ),
                                 ],
