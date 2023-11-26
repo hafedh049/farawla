@@ -60,6 +60,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Container(
+                    margin: const EdgeInsets.all(4),
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(color: pink.withOpacity(.2), borderRadius: BorderRadius.circular(5)),
                     child: StatefulBuilder(
@@ -71,11 +72,10 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                   ),
                   const SizedBox(width: 10),
                   IconButton(
-                    onPressed: () {
+                    onPressed: () async {
                       final TextEditingController searchLanguageController = TextEditingController();
                       final GlobalKey<State> searchKey = GlobalKey<State>();
-
-                      showModalBottomSheet(
+                      await showModalBottomSheet(
                         context: context,
                         builder: (BuildContext context) {
                           return Container(
@@ -152,7 +152,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                             ),
                           );
                         },
-                      );
+                      ).then((value) => searchLanguageController.dispose());
                     },
                     icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
                   ),

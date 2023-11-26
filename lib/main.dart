@@ -10,5 +10,5 @@ class Main extends StatelessWidget {
   const Main({super.key});
 
   @override
-  Widget build(BuildContext context) => MaterialApp(title: "Farawla", debugShowCheckedModeBanner: false, home: const Farawels(), theme: ThemeData.light());
+  Widget build(BuildContext context) => MaterialApp(title: "Farawla", debugShowCheckedModeBanner: false, home: const Farawels(), theme: ThemeData.dark());
 }
