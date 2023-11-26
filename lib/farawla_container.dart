@@ -64,6 +64,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
+                    const SizedBox(width: 10),
                     IconButton(
                       onPressed: () {
                         final TextEditingController searchLanguageController = TextEditingController();
