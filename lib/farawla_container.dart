@@ -87,6 +87,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   ),
                                   const SizedBox(height: 10),
                                   ListView.builder(
+                                    itemCount: Mode,
                                     itemBuilder: (BuildContext context, int index) {},
                                   ),
                                 ],
