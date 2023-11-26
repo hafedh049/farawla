@@ -43,12 +43,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
       onTap: () {},
       child: Container(
         padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: const <BoxShadow>[
-            BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer),
-          ],
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), boxShadow: const <BoxShadow>[BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer)]),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,15 +51,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
             Stack(
               alignment: AlignmentDirectional.topEnd,
               children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: CodeField(
-                    controller: _codeController,
-                    maxLines: 8,
-                    wrap: true,
-                    gutterStyle: const GutterStyle(width: 20),
-                  ),
-                ),
+                ClipRRect(borderRadius: BorderRadius.circular(15), child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20))),
                 IconButton(
                   onPressed: () {
                     final TextEditingController searchLanguageController = TextEditingController();
