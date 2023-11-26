@@ -106,7 +106,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                               padding: const EdgeInsets.all(8),
                                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
                                               child: Row(
-                                                children: <Widget>[Icon(FontAwesomeIcons.)],
+                                                children: <Widget>[Icon(FontAwesomeIcons.),],
                                               ),
                                             ),
                                           ),
