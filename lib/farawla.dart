@@ -17,7 +17,7 @@ class _FarawlaState extends State<Farawla> {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: <Widget>[
-              for (int i = 0; i < 20; i += 1) ...<Widget>[
+              for (int i = 0; i < 5; i += 1) ...<Widget>[
                 const FarawlaContainer(),
                 const SizedBox(height: 30),
               ],
