@@ -23,12 +23,6 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
   final GlobalKey<State> _codeKey = GlobalKey<State>();
 
   @override
-  void initState() {
-    _codeController = CodeController(language: _language, params: const EditorParams(tabSpaces: 4));
-    super.initState();
-  }
-
-  @override
   void dispose() {
     _codeController.dispose();
     _descriptionController.dispose();
@@ -37,6 +31,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
 
   @override
   Widget build(BuildContext context) {
+    _codeController = CodeController(language: _language, params: const EditorParams(tabSpaces: 4));
     return InkWell(
       hoverColor: transparent,
       splashColor: transparent,
