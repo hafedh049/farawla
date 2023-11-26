@@ -65,7 +65,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 ),
                 IconButton(
                   onPressed: () {
-                    final TextEditingController _searchLanguageController = TextEditingController();
+                    final TextEditingController searchLanguageController = TextEditingController();
                     showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
@@ -79,7 +79,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                 children: <Widget>[
                                   SearchBarAnimation(
                                     onChanged: (String text) {},
-                                    textEditingController: _searchLanguageController,
+                                    textEditingController: searchLanguageController,
                                     isOriginalAnimation: true,
                                     buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                     trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
