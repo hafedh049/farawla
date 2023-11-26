@@ -92,7 +92,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     itemBuilder: (BuildContext context, int index) {
                                       return StatefulBuilder(
 
-                                        builder: (context, snapshot) {
+                                        builder: (BuildContext context, void Function(void Function()) $) {
                                           return Container(
                                             padding: const EdgeInsets.all(8),
                                             decoration: BoxDecoration(
