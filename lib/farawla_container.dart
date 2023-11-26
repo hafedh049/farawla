@@ -88,7 +88,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                       highlightColor: transparent,
                                       hoverColor: transparent,
                                       onTap: () {},
-                                      child: const Icon(FontAwesomeIcons.x, size: 15),
+                                      child: const Center(child: Icon(FontAwesomeIcons.x, size: 15)),
                                     ),
                                     secondaryButtonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                   ),
