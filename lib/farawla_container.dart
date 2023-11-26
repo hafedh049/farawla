@@ -70,7 +70,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
-                        return SizedBox(
+                        return Container(
+                          padding: const EdgeInsets.all(16),
                           height: 300,
                           child: StatefulBuilder(
                             builder: (BuildContext context, void Function(void Function()) _) {
