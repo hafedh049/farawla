@@ -101,7 +101,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                             onHover: (bool state)=>$(()=>hoverState = state),
                                             child: AnimatedScale(
                                               duration: 700.ms,
-                                              scale: ,
+                                              scale: hoverState ? 1.05:1,
                                               child: AnimatedContainer(
                                                 duration: 700.ms,
                                                 padding: const EdgeInsets.all(8),
