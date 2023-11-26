@@ -95,7 +95,6 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                       itemBuilder: (BuildContext context, int index) {
                                         bool hoverState = false;
                                         return StatefulBuilder(
-                                          key: searchKey,
                                           builder: (BuildContext context, void Function(void Function()) $) {
                                             return InkWell(
                                               highlightColor: transparent,
