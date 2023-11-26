@@ -86,6 +86,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
                                   ),
                                   const SizedBox(height: 10),
+                                  ListView.builder(itemBuilder: (BuildContext context, int index) {})
                                 ],
                               );
                             },
