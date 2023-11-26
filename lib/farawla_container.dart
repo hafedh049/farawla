@@ -90,7 +90,13 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   ListView.builder(
                                     itemCount: allLanguages.length,
                                     itemBuilder: (BuildContext context, int index) {
-                                      return Container(padding: const EdgeInsets.all(8),decoration: BoxDecoration(),child: ,);
+                                      return Container(
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(),
+                                        child: Row(
+                                          children: <Widget>[],
+                                        ),
+                                      );
                                     },
                                   ),
                                 ],
