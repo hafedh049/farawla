@@ -98,6 +98,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                             highlightColor: transparent,
                                             hoverColor: transparent,
                                             splashColor: transparent,
+                                            onHover: (bool state){},
                                             child: AnimatedScale(
                                               duration: 700.ms,
                                               scale: ,
