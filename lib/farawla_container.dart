@@ -86,41 +86,43 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
                                   ),
                                   const SizedBox(height: 10),
-                                  ListView.builder(
-                                    itemCount: languages.length,
-                                    itemBuilder: (BuildContext context, int index) {
-                                      bool hoverState = false;
-                                      return StatefulBuilder(
-                                        builder: (BuildContext context, void Function(void Function()) $) {
-                                          return InkWell(
-                                            highlightColor: transparent,
-                                            hoverColor: transparent,
-                                            splashColor: transparent,
-                                            onHover: (bool state) => $(() => hoverState = state),
-                                            onTap: () {
-                                              _codeKey.currentState!.setState(() => _language = allLanguages[languages[index]]!);
-                                              Navigator.pop(context);
-                                            },
-                                            child: AnimatedScale(
-                                              duration: 700.ms,
-                                              scale: hoverState ? 1.05 : 1,
-                                              child: AnimatedContainer(
+                                  Expanded(
+                                    child: ListView.builder(
+                                      itemCount: languages.length,
+                                      itemBuilder: (BuildContext context, int index) {
+                                        bool hoverState = false;
+                                        return StatefulBuilder(
+                                          builder: (BuildContext context, void Function(void Function()) $) {
+                                            return InkWell(
+                                              highlightColor: transparent,
+                                              hoverColor: transparent,
+                                              splashColor: transparent,
+                                              onHover: (bool state) => $(() => hoverState = state),
+                                              onTap: () {
+                                                _codeKey.currentState!.setState(() => _language = allLanguages[languages[index]]!);
+                                                Navigator.pop(context);
+                                              },
+                                              child: AnimatedScale(
                                                 duration: 700.ms,
-                                                padding: const EdgeInsets.all(8),
-                                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
-                                                child: Row(
-                                                  children: <Widget>[
-                                                    const Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
-                                                    const SizedBox(width: 10),
-                                                    Text(languages[index], style: TextStyle(fontSize: hoverState ? 18 : 16, fontWeight: hoverState ? FontWeight.bold : FontWeight.w400)),
-                                                  ],
+                                                scale: hoverState ? 1.05 : 1,
+                                                child: AnimatedContainer(
+                                                  duration: 700.ms,
+                                                  padding: const EdgeInsets.all(8),
+                                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      const Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
+                                                      const SizedBox(width: 10),
+                                                      Text(languages[index], style: TextStyle(fontSize: hoverState ? 18 : 16, fontWeight: hoverState ? FontWeight.bold : FontWeight.w400)),
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    },
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ],
                               );
