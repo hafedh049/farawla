@@ -54,7 +54,10 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                   child: StatefulBuilder(
                     key: _codeKey,
                     builder: (BuildContext context, void Function(void Function()) _) {
-                      return CodeTheme(data: , child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)));
+                      return CodeTheme(
+                        data: CodeThemeData(styles: monokaiSublimeTheme),
+                        child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)),
+                      );
                     },
                   ),
                 ),
