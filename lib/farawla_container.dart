@@ -90,7 +90,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                       onTap: () => _(() => _searchLanguageController.clear()),
                                       child: const Center(child: Icon(FontAwesomeIcons.x, size: 15)),
                                     ),
-                                    secondaryButtonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                                    secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
                                   ),
                                 ],
                               );
