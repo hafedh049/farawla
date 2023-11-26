@@ -1,3 +1,4 @@
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawels_container.dart';
 import 'package:farawla/utils/callbacks.dart';
 import 'package:farawla/utils/globals.dart';
@@ -22,6 +23,16 @@ class _FarawelsState extends State<Farawels> {
     return Scaffold(
       body: Column(
         children: <Widget>[
+          WindowTitleBarBox(
+            child: Row(
+              children: <Widget>[
+                Expanded(child: MoveWindow()),
+                MinimizeWindowButton(),
+                MaximizeWindowButton(),
+                CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+              ],
+            ),
+          ),
           Row(
             children: <Widget>[
               const Spacer(),
@@ -202,7 +213,7 @@ class _FarawelsState extends State<Farawels> {
                                     runAlignment: WrapAlignment.center,
                                     runSpacing: 20,
                                     spacing: 20,
-                                    children: <Widget>[for (Box box in boxes) FarawelsContainer(box: box, boxIndex: boxes.indexOf(box))],
+                                    children: <Widget>[for (int index = 0; index < boxes.length; index++) FarawelsContainer(boxIndex: index)],
                                   );
                           } else if (snapshot.connectionState == ConnectionState.waiting) {
                             return const CircularProgressIndicator(color: pink);

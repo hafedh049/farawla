@@ -39,6 +39,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
   void initState() {
     _codeController.text = widget.data["code"];
     _descriptionController.text = widget.data["explication"];
+    _languageName = widget.data["language"];
+    _languageMode = allLanguages.entries.firstWhere((MapEntry<String, Mode> element) => element.key.toUpperCase() == _languageName.toUpperCase()).value;
     super.initState();
   }
 
@@ -72,7 +74,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                           wrap: true,
                           gutterStyle: const GutterStyle(width: 20),
                           onChanged: (String text) {
-                            print(boxes[widget.boxIndex].get("data")[widget.tileIndex]);
+                            final List data = boxes[widget.boxIndex].get("data");
+                            data[widget.tileIndex] = <dynamic, dynamic>{"language": _languageName, "code": _codeController.text.trim(), "explication": _descriptionController.text.trim()};
+                            boxes[widget.boxIndex].put("data", data);
                           },
                         ),
                       );
@@ -133,10 +137,14 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                   hoverColor: transparent,
                                                   splashColor: transparent,
                                                   onHover: (bool state) => $(() => hoverState = state),
-                                                  onTap: () {
+                                                  onTap: () async {
                                                     _codeKey.currentState!.setState(() => _languageMode = allLanguages[languages[index]]!);
-                                                    _codeController = CodeController(language: _languageMode, params: const EditorParams(tabSpaces: 4));
+                                                    _codeController = CodeController(text: _codeController.text, language: _languageMode, params: const EditorParams(tabSpaces: 4));
                                                     _languageNameKey.currentState!.setState(() => _languageName = languages[index][0].toUpperCase() + languages[index].substring(1));
+                                                    final List data = boxes[widget.boxIndex].get("data");
+                                                    data[widget.tileIndex] = <dynamic, dynamic>{"language": _languageName, "code": _codeController.text.trim(), "explication": _descriptionController.text.trim()};
+                                                    await boxes[widget.boxIndex].put("data", data);
+                                                    // ignore: use_build_context_synchronously
                                                     Navigator.pop(context);
                                                   },
                                                   child: AnimatedScale(
@@ -187,7 +195,17 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
               borderRadius: BorderRadius.circular(15),
               child: CodeTheme(
                 data: CodeThemeData(styles: darculaTheme),
-                child: CodeField(controller: _descriptionController, maxLines: 5, wrap: true, gutterStyle: const GutterStyle(width: 20)),
+                child: CodeField(
+                  controller: _descriptionController,
+                  maxLines: 5,
+                  wrap: true,
+                  gutterStyle: const GutterStyle(width: 20),
+                  onChanged: (String text) {
+                    final List data = boxes[widget.boxIndex].get("data");
+                    data[widget.tileIndex] = <dynamic, dynamic>{"language": _languageName, "code": _codeController.text.trim(), "explication": _descriptionController.text.trim()};
+                    boxes[widget.boxIndex].put("data", data);
+                  },
+                ),
               ),
             ),
           ],
