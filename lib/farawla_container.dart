@@ -89,7 +89,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                 child: StatefulBuilder(
                                   key: searchKey,
                                   builder: (BuildContext context, void Function(void Function()) _) {
-                                    final List<String> languages = allLanguages.keys.where((String element) => element.toLowerCase().contains(searchLanguageController.text.trim().toLowerCase())).toList();
+                                    final List<String> languages = allLanguages.keys.where((String element) => element.toLowerCase().startsWith(searchLanguageController.text.trim().toLowerCase())).toList();
                                     return ListView.builder(
                                       itemCount: languages.length,
                                       itemBuilder: (BuildContext context, int index) {
