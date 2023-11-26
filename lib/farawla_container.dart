@@ -121,7 +121,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                         languages[index][0].toUpperCase() + languages[index].substring(1),
                                                         style: TextStyle(
                                                           fontSize: hoverState ? 17 : 16,
-                                                          fontWeight: hoverState ? FontWeight.bold : FontWeight.w400,
+                                                          fontWeight: hoverState ? FontWeight.w500 : FontWeight.w400,
                                                         ),
                                                       ),
                                                     ],
