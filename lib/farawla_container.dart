@@ -55,7 +55,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 IconButton(
                   onPressed: () {
                     final TextEditingController searchLanguageController = TextEditingController();
-                    final List<String>allLanguages =  allLanguages.keys.toList()
+                    final List<String> languages = allLanguages.keys.toList();
                     showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
@@ -77,7 +77,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   ),
                                   const SizedBox(height: 10),
                                   ListView.builder(
-                                    itemCount: allLanguages.length,
+                                    itemCount: languages.length,
                                     itemBuilder: (BuildContext context, int index) {
                                       bool hoverState = false;
                                       return StatefulBuilder(
@@ -99,7 +99,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                   children: <Widget>[
                                                     const Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
                                                     const SizedBox(width: 10),
-                                                    Text([index]!),
+                                                    Text(languages[index]!),
                                                   ],
                                                 ),
                                               ),
