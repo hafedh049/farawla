@@ -117,7 +117,13 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                     children: <Widget>[
                                                       const Icon(FontAwesomeIcons.code, size: 15, color: pink),
                                                       const SizedBox(width: 10),
-                                                      Text(languages[index][0].toUpperCase() + languages[index].substring(1), style: TextStyle(fontSize: hoverState ? 18 : 16, fontWeight: hoverState ? FontWeight.bold : FontWeight.w400)),
+                                                      Text(
+                                                        languages[index][0].toUpperCase() + languages[index].substring(1),
+                                                        style: TextStyle(
+                                                          fontSize: hoverState ? 17 : 16,
+                                                          fontWeight: hoverState ? FontWeight.bold : FontWeight.w400,
+                                                        ),
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
