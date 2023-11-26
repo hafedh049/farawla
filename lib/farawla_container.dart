@@ -2,6 +2,7 @@ import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
+import 'package:flutter_highlight/themes/monokai-sublime.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:highlight/highlight_core.dart';
 import 'package:highlight/languages/all.dart';
@@ -53,7 +54,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                   child: StatefulBuilder(
                     key: _codeKey,
                     builder: (BuildContext context, void Function(void Function()) _) {
-                      return CodeTheme(data: CodeThemeData(), child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)));
+                      return CodeTheme(data: , child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)));
                     },
                   ),
                 ),
