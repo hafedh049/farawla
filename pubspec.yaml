@@ -1,7 +1,7 @@
 name: farawla
-description: 'Revision platform.'+
+description: Revision platform.
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 
@@ -10,7 +10,7 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: flutter 
 
   font_awesome_flutter: ^10.6.0
   flutter_animate: ^4.3.0
@@ -30,6 +30,7 @@ flutter:
 
   uses-material-design: true
 
+  generate: true
+
   assets:
-    - assets/lotties
-  
+    - assets/
