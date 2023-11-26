@@ -94,6 +94,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                         padding: const EdgeInsets.all(8),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(15),
+                                          color: 
                                         ),
                                         child: Row(
                                           children: <Widget>[],
