@@ -84,6 +84,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     isOriginalAnimation: true,
                                     buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                     trailingWidget: InkWell(
+                                      splashColor: transparent,
+                                      highlightColor: transparent,
+                                      hoverColor: transparent,
                                       onTap: () {},
                                       child: const Icon(FontAwesomeIcons.x, size: 15),
                                     ),
