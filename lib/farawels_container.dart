@@ -6,8 +6,9 @@ import 'package:flutter_tilt/flutter_tilt.dart';
 import 'package:hive/hive.dart';
 
 class FarawelsContainer extends StatefulWidget {
-  const FarawelsContainer({super.key, required this.box});
+  const FarawelsContainer({super.key, required this.box, required this.boxIndex});
   final Box box;
+  final int boxIndex;
   @override
   State<FarawelsContainer> createState() => _FarawelsContainerState();
 }
@@ -20,7 +21,7 @@ class _FarawelsContainerState extends State<FarawelsContainer> {
       hoverColor: transparent,
       splashColor: transparent,
       highlightColor: transparent,
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => const Farawla())),
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Farawla(box: widget.box, boxIndex: widget.boxIndex))),
       onHover: (bool state) => setState(() => _state = state),
       child: Tilt(
         borderRadius: BorderRadius.circular(15),

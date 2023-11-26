@@ -202,7 +202,7 @@ class _FarawelsState extends State<Farawels> {
                                     runAlignment: WrapAlignment.center,
                                     runSpacing: 20,
                                     spacing: 20,
-                                    children: <Widget>[for (Box box in boxes) FarawelsContainer(box: box)],
+                                    children: <Widget>[for (Box box in boxes) FarawelsContainer(box: box, boxIndex: boxes.indexOf(box))],
                                   );
                           } else if (snapshot.connectionState == ConnectionState.waiting) {
                             return const CircularProgressIndicator(color: pink);

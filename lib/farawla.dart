@@ -2,10 +2,13 @@ import 'package:farawla/farawla_container.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hive/hive.dart';
 import 'package:lottie/lottie.dart';
 
 class Farawla extends StatefulWidget {
-  const Farawla({super.key});
+  const Farawla({super.key, required this.box, required this.boxIndex});
+  final Box box;
+  final int boxIndex;
 
   @override
   State<Farawla> createState() => _FarawlaState();
@@ -41,7 +44,7 @@ class _FarawlaState extends State<Farawla> {
                       highlightColor: transparent,
                       hoverColor: transparent,
                       splashColor: transparent,
-                      onTap: () => print(1),
+                      onTap: () {},
                       child: Container(
                         width: 40,
                         height: 40,
@@ -56,13 +59,15 @@ class _FarawlaState extends State<Farawla> {
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index) {
-                  return const Padding(padding: EdgeInsets.all(24), child: FarawlaContainer());
-                },
-              ),
+              child: widget.box.get("data").isEmpty
+                  ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
+                  : ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: widget.box.get("data").length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: widget.box.get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
+                      },
+                    ),
             ),
           ],
         ),

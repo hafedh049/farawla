@@ -11,8 +11,10 @@ import 'package:highlight/languages/python.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
 class FarawlaContainer extends StatefulWidget {
-  const FarawlaContainer({super.key});
-
+  const FarawlaContainer({super.key, required this.data, required this.boxIndex, required this.tileIndex});
+  final int tileIndex;
+  final int boxIndex;
+  final Map<dynamic, dynamic> data;
   @override
   State<FarawlaContainer> createState() => _FarawlaContainerState();
 }
@@ -31,6 +33,13 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
     _codeController.dispose();
     _descriptionController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    _codeController.text = widget.data["code"];
+    _descriptionController.text = widget.data["explication"];
+    super.initState();
   }
 
   @override
@@ -57,7 +66,15 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     builder: (BuildContext context, void Function(void Function()) _) {
                       return CodeTheme(
                         data: CodeThemeData(styles: darculaTheme),
-                        child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)),
+                        child: CodeField(
+                          controller: _codeController,
+                          maxLines: 8,
+                          wrap: true,
+                          gutterStyle: const GutterStyle(width: 20),
+                          onChanged: (String text) {
+                            print(boxes[widget.boxIndex].get("data")[widget.tileIndex]);
+                          },
+                        ),
                       );
                     },
                   ),
