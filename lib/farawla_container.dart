@@ -108,7 +108,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
                                                 child: Row(
                                                   children: <Widget>[
-                                                    Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
+                                                    const Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
+                                                    const SizedBox(width: 10),
                                                   ],
                                                 ),
                                               ),
