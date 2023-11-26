@@ -85,6 +85,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                     secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
                                   ),
+                                  const SizedBox(height: 10),
                                 ],
                               );
                             },
