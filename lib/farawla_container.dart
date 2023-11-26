@@ -31,7 +31,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
 
   @override
   Widget build(BuildContext context) {
-    _codeController = CodeController(language: _language, params: const EditorParams(tabSpaces: 4), analyzer: DartPadAnalyzer());
+    _codeController = CodeController(language: _language, params: const EditorParams(tabSpaces: 4), analyzer: const DefaultLocalAnalyzer());
     return InkWell(
       hoverColor: transparent,
       splashColor: transparent,
