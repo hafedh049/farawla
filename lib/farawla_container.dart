@@ -17,8 +17,10 @@ class FarawlaContainer extends StatefulWidget {
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
   Mode _language = python;
+
   late final CodeController _codeController;
   final CodeController _descriptionController = CodeController(params: const EditorParams(tabSpaces: 4));
+  final GlobalKey<State> _codeKey = GlobalKey<State>();
 
   @override
   void initState() {
