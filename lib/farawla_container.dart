@@ -99,7 +99,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                   children: <Widget>[
                                                     const Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
                                                     const SizedBox(width: 10),
-                                                    Text(languages[index], style: TextStyle(fontSize: hoverState ? 18 : 16)),
+                                                    Text(languages[index], style: TextStyle(fontSize: hoverState ? 18 : 16, fontWeight: hoverState ? FontWeight.bold : FontWeight.w400)),
                                                   ],
                                                 ),
                                               ),
