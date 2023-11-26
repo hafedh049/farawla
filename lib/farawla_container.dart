@@ -94,15 +94,24 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                       return StatefulBuilder(
 
                                         builder: (BuildContext context, void Function(void Function()) $) {
-                                          return AnimatedContainer(
-                                            duration: 700.ms,
-                                            padding: const EdgeInsets.all(8),
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(15),
-                                              color: 
-                                            ),
-                                            child: Row(
-                                              children: <Widget>[],
+                                          return InkWell(
+                                            highlightColor: transparent,
+                                            hoverColor: transparent,
+                                            splashColor: transparent,
+                                            child: AnimatedScale(
+                                              duration: 700.ms,
+                                              scale: ,
+                                              child: AnimatedContainer(
+                                                duration: 700.ms,
+                                                padding: const EdgeInsets.all(8),
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(15),
+                                                  color: 
+                                                ),
+                                                child: Row(
+                                                  children: <Widget>[],
+                                                ),
+                                              ),
                                             ),
                                           );
                                         }
