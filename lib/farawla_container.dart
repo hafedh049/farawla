@@ -70,6 +70,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                         color: pink.withOpacity(.2),
                         borderRadius: BorderRadius.circular(5),
                       ),
+                      child: Text(_language.toString()),
                     ),
                     const SizedBox(width: 10),
                     IconButton(
