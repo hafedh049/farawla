@@ -84,7 +84,6 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     isOriginalAnimation: true,
                                     buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                                     trailingWidget: IconButton(
-                                      padding: EdgeInsets.all(1),
                                       onPressed: () {},
                                       icon: const Icon(FontAwesomeIcons.x, size: 15),
                                     ),
