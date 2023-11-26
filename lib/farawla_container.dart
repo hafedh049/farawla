@@ -1,5 +1,6 @@
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:highlight/highlight_core.dart';
@@ -93,7 +94,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                       return StatefulBuilder(
 
                                         builder: (BuildContext context, void Function(void Function()) $) {
-                                          return Container(
+                                          return AnimatedContainer(
+                                            duration: 700.ms,
                                             padding: const EdgeInsets.all(8),
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(15),
