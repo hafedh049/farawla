@@ -114,7 +114,12 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                   splashColor: transparent,
                                                   onHover: (bool state) => $(() => hoverState = state),
                                                   onTap: () {
-                                                    _codeKey.currentState!.setState(() {});
+                                                    _codeKey.currentState!.setState(
+                                                      () {
+                                                        _languageMode = allLanguages[languages[index]]!;
+                                                        _languageName = languages[index];
+                                                      },
+                                                    );
                                                     Navigator.pop(context);
                                                   },
                                                   child: AnimatedScale(
