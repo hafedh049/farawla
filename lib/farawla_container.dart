@@ -61,87 +61,92 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                     },
                   ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    final TextEditingController searchLanguageController = TextEditingController();
-                    final GlobalKey<State> searchKey = GlobalKey<State>();
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: () {
+                        final TextEditingController searchLanguageController = TextEditingController();
+                        final GlobalKey<State> searchKey = GlobalKey<State>();
 
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Container(
-                          padding: const EdgeInsets.all(16),
-                          height: 300,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              SearchBarAnimation(
-                                onChanged: (String text) => searchKey.currentState!.setState(() {}),
-                                textEditingController: searchLanguageController,
-                                isOriginalAnimation: true,
-                                buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                                trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                                secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
-                              ),
-                              const SizedBox(height: 10),
-                              Expanded(
-                                child: StatefulBuilder(
-                                  key: searchKey,
-                                  builder: (BuildContext context, void Function(void Function()) _) {
-                                    final List<String> languages = allLanguages.keys.where((String element) => element.toLowerCase().startsWith(searchLanguageController.text.trim().toLowerCase())).toList();
-                                    return ListView.builder(
-                                      itemCount: languages.length,
-                                      itemBuilder: (BuildContext context, int index) {
-                                        bool hoverState = false;
-                                        return StatefulBuilder(
-                                          builder: (BuildContext context, void Function(void Function()) $) {
-                                            return InkWell(
-                                              highlightColor: transparent,
-                                              hoverColor: transparent,
-                                              splashColor: transparent,
-                                              onHover: (bool state) => $(() => hoverState = state),
-                                              onTap: () {
-                                                _codeKey.currentState!.setState(() => _language = allLanguages[languages[index]]!);
-                                                Navigator.pop(context);
-                                              },
-                                              child: AnimatedScale(
-                                                duration: 700.ms,
-                                                scale: hoverState ? 1.02 : 1,
-                                                child: AnimatedContainer(
-                                                  margin: const EdgeInsets.all(4),
-                                                  duration: 700.ms,
-                                                  padding: const EdgeInsets.all(8),
-                                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
-                                                  child: Row(
-                                                    children: <Widget>[
-                                                      const Icon(FontAwesomeIcons.code, size: 15, color: pink),
-                                                      const SizedBox(width: 10),
-                                                      Text(
-                                                        languages[index][0].toUpperCase() + languages[index].substring(1),
-                                                        style: TextStyle(
-                                                          fontSize: hoverState ? 17 : 16,
-                                                          fontWeight: hoverState ? FontWeight.w500 : FontWeight.w400,
-                                                        ),
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              padding: const EdgeInsets.all(16),
+                              height: 300,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  SearchBarAnimation(
+                                    onChanged: (String text) => searchKey.currentState!.setState(() {}),
+                                    textEditingController: searchLanguageController,
+                                    isOriginalAnimation: true,
+                                    buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                                    trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                                    secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Expanded(
+                                    child: StatefulBuilder(
+                                      key: searchKey,
+                                      builder: (BuildContext context, void Function(void Function()) _) {
+                                        final List<String> languages = allLanguages.keys.where((String element) => element.toLowerCase().startsWith(searchLanguageController.text.trim().toLowerCase())).toList();
+                                        return ListView.builder(
+                                          itemCount: languages.length,
+                                          itemBuilder: (BuildContext context, int index) {
+                                            bool hoverState = false;
+                                            return StatefulBuilder(
+                                              builder: (BuildContext context, void Function(void Function()) $) {
+                                                return InkWell(
+                                                  highlightColor: transparent,
+                                                  hoverColor: transparent,
+                                                  splashColor: transparent,
+                                                  onHover: (bool state) => $(() => hoverState = state),
+                                                  onTap: () {
+                                                    _codeKey.currentState!.setState(() => _language = allLanguages[languages[index]]!);
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: AnimatedScale(
+                                                    duration: 700.ms,
+                                                    scale: hoverState ? 1.02 : 1,
+                                                    child: AnimatedContainer(
+                                                      margin: const EdgeInsets.all(4),
+                                                      duration: 700.ms,
+                                                      padding: const EdgeInsets.all(8),
+                                                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
+                                                      child: Row(
+                                                        children: <Widget>[
+                                                          const Icon(FontAwesomeIcons.code, size: 15, color: pink),
+                                                          const SizedBox(width: 10),
+                                                          Text(
+                                                            languages[index][0].toUpperCase() + languages[index].substring(1),
+                                                            style: TextStyle(
+                                                              fontSize: hoverState ? 17 : 16,
+                                                              fontWeight: hoverState ? FontWeight.w500 : FontWeight.w400,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
-                                                    ],
+                                                    ),
                                                   ),
-                                                ),
-                                              ),
+                                                );
+                                              },
                                             );
                                           },
                                         );
                                       },
-                                    );
-                                  },
-                                ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            );
+                          },
                         );
                       },
-                    );
-                  },
-                  icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
+                      icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
+                    ),
+                  ],
                 ),
               ],
             ),
