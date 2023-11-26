@@ -71,13 +71,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                         color: pink.withOpacity(.2),
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: Text(
-                        _languageName,
-                        style: TextStyle(
-                          fontSize: hoverState ? 17 : 16,
-                          fontWeight: hoverState ? FontWeight.w500 : FontWeight.w400,
-                        ),
-                      ),
+                      child: Text(_languageName, style: const TextStyle(color: white, fontSize: 16, fontWeight: FontWeight.w400)),
                     ),
                     const SizedBox(width: 10),
                     IconButton(
