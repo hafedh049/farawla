@@ -64,6 +64,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
+                    Container(padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), ))
                     const SizedBox(width: 10),
                     IconButton(
                       onPressed: () {
