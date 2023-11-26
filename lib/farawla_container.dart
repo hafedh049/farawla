@@ -66,6 +66,8 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                   onPressed: () {
                     final TextEditingController searchLanguageController = TextEditingController();
                     final List<String> languages = allLanguages.keys.toList();
+                    final GlobalKey<State> _codeKey = GlobalKey<State>();
+
                     showModalBottomSheet(
                       context: context,
                       builder: (BuildContext context) {
