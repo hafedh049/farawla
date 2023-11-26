@@ -86,6 +86,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                             hoverColor: transparent,
                                             splashColor: transparent,
                                             onHover: (bool state) => $(() => hoverState = state),
+                                            onTap: () {},
                                             child: AnimatedScale(
                                               duration: 700.ms,
                                               scale: hoverState ? 1.05 : 1,
@@ -97,7 +98,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                   children: <Widget>[
                                                     const Icon(FontAwesomeIcons.codeCommit, size: 15, color: pink),
                                                     const SizedBox(width: 10),
-                                                    Text(allLanguages.keys.toList()[index]!),
+                                                    Text([index]!),
                                                   ],
                                                 ),
                                               ),
