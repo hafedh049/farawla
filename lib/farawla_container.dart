@@ -66,7 +66,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                   onPressed: () {
                     final TextEditingController searchLanguageController = TextEditingController();
                     final List<String> languages = allLanguages.keys.toList();
-                    final GlobalKey<State> _codeKey = GlobalKey<State>();
+                    final GlobalKey<State> searchKey = GlobalKey<State>();
 
                     showModalBottomSheet(
                       context: context,
@@ -78,7 +78,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               SearchBarAnimation(
-                                onChanged: (String text) {},
+                                onChanged: (String text) => searchKey,
                                 textEditingController: searchLanguageController,
                                 isOriginalAnimation: true,
                                 buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
@@ -88,7 +88,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                               const SizedBox(height: 10),
                               Expanded(
                                 child: StatefulBuilder(
-                                    key: _codeKey,
+                                    key: searchKey,
                                     builder: (BuildContext context, void Function(void Function()) _) {
                                       return ListView.builder(
                                         itemCount: languages.length,
