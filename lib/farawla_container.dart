@@ -51,7 +51,14 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
             Stack(
               alignment: AlignmentDirectional.topEnd,
               children: <Widget>[
-                ClipRRect(borderRadius: BorderRadius.circular(15), child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20))),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: StatefulBuilder(
+                    builder: (BuildContext context, void Function(void Function()) _) {
+                      return CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20));
+                    },
+                  ),
+                ),
                 IconButton(
                   onPressed: () {
                     final TextEditingController searchLanguageController = TextEditingController();
@@ -87,7 +94,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                             hoverColor: transparent,
                                             splashColor: transparent,
                                             onHover: (bool state) => $(() => hoverState = state),
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.pop(context);
+                                            },
                                             child: AnimatedScale(
                                               duration: 700.ms,
                                               scale: hoverState ? 1.05 : 1,
