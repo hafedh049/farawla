@@ -92,31 +92,26 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     itemCount: allLanguages.length,
                                     itemBuilder: (BuildContext context, int index) {
                                       bool hoverState = false;
-                                      return StatefulBuilder(
-                                        builder: (BuildContext context, void Function(void Function()) $) {
-                                          return InkWell(
-                                            highlightColor: transparent,
-                                            hoverColor: transparent,
-                                            splashColor: transparent,
-                                            onHover: (bool state)=>$(()=>hoverState = state),
-                                            child: AnimatedScale(
+                                      return StatefulBuilder(builder: (BuildContext context, void Function(void Function()) $) {
+                                        return InkWell(
+                                          highlightColor: transparent,
+                                          hoverColor: transparent,
+                                          splashColor: transparent,
+                                          onHover: (bool state) => $(() => hoverState = state),
+                                          child: AnimatedScale(
+                                            duration: 700.ms,
+                                            scale: hoverState ? 1.05 : 1,
+                                            child: AnimatedContainer(
                                               duration: 700.ms,
-                                              scale: hoverState ? 1.05:1,
-                                              child: AnimatedContainer(
-                                                duration: 700.ms,
-                                                padding: const EdgeInsets.all(8),
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(15),
-                                                  color: 
-                                                ),
-                                                child: Row(
-                                                  children: <Widget>[],
-                                                ),
+                                              padding: const EdgeInsets.all(8),
+                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
+                                              child: Row(
+                                                children: <Widget>[],
                                               ),
                                             ),
-                                          );
-                                        }
-                                      );
+                                          ),
+                                        );
+                                      });
                                     },
                                   ),
                                 ],
