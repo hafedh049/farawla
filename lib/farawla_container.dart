@@ -91,14 +91,14 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                   ListView.builder(
                                     itemCount: allLanguages.length,
                                     itemBuilder: (BuildContext context, int index) {
+                                      bool hoverState = false;
                                       return StatefulBuilder(
-
                                         builder: (BuildContext context, void Function(void Function()) $) {
                                           return InkWell(
                                             highlightColor: transparent,
                                             hoverColor: transparent,
                                             splashColor: transparent,
-                                            onHover: (bool state){},
+                                            onHover: (bool state)=>$(()=>hoverState = state),
                                             child: AnimatedScale(
                                               duration: 700.ms,
                                               scale: ,
