@@ -71,7 +71,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                         color: pink.withOpacity(.2),
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: Text(_language.toString()),
+                      child: Text(_languageName),
                     ),
                     const SizedBox(width: 10),
                     IconButton(
@@ -114,7 +114,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                                   splashColor: transparent,
                                                   onHover: (bool state) => $(() => hoverState = state),
                                                   onTap: () {
-                                                    _codeKey.currentState!.setState(() => _language = allLanguages[languages[index]]!);
+                                                    _codeKey.currentState!.setState(() {});
                                                     Navigator.pop(context);
                                                   },
                                                   child: AnimatedScale(
