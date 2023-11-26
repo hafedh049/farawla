@@ -91,7 +91,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                           ),
                         );
                       },
-                    ).then((void value) => _searchLanguageController.dispose());
+                    );
                   },
                   icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
                 ),
