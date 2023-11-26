@@ -92,7 +92,9 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                     itemBuilder: (BuildContext context, int index) {
                                       return Container(
                                         padding: const EdgeInsets.all(8),
-                                        decoration: BoxDecoration(),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
                                         child: Row(
                                           children: <Widget>[],
                                         ),
