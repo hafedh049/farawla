@@ -111,7 +111,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                             ),
                                           ),
                                         );
-                                      });
+                                      },);
                                     },
                                   ),
                                 ],
