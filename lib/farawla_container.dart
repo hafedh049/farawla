@@ -54,6 +54,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: StatefulBuilder(
+                    key: _codeKey,
                     builder: (BuildContext context, void Function(void Function()) _) {
                       return CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20));
                     },
@@ -95,6 +96,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                                             splashColor: transparent,
                                             onHover: (bool state) => $(() => hoverState = state),
                                             onTap: () {
+                                              _codeKey.currentState!.setState(() => _language = allLanguages[index]!);
                                               Navigator.pop(context);
                                             },
                                             child: AnimatedScale(
