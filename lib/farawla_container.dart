@@ -17,7 +17,8 @@ class FarawlaContainer extends StatefulWidget {
 }
 
 class _FarawlaContainerState extends State<FarawlaContainer> {
-  Mode _language = python;
+  Mode _languageMode = python;
+  String _languageName = "Python";
 
   late final CodeController _codeController;
   final CodeController _descriptionController = CodeController(params: const EditorParams(tabSpaces: 4));
@@ -32,7 +33,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
 
   @override
   Widget build(BuildContext context) {
-    _codeController = CodeController(language: _language, params: const EditorParams(tabSpaces: 4));
+    _codeController = CodeController(language: _languageMode, params: const EditorParams(tabSpaces: 4));
     return InkWell(
       hoverColor: transparent,
       splashColor: transparent,
