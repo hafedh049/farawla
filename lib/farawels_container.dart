@@ -32,15 +32,16 @@ class _FarawelsContainerState extends State<FarawelsContainer> {
           scale: _state ? 1.1 : 1,
           child: AnimatedContainer(
             duration: 700.ms,
-            margin: const EdgeInsets.all(4),
             padding: const EdgeInsets.all(16),
             width: 200,
             height: 200,
             decoration: BoxDecoration(
+              image: DecorationImage(image: MemoryImage(widget.box.get("picture")), fit: BoxFit.cover),
               color: _state ? blue.withOpacity(.3) : null,
               borderRadius: BorderRadius.circular(15),
               boxShadow: const <BoxShadow>[BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer)],
             ),
+            child: Center(child: Text(widget.box.get("title"), style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: white))),
           ),
         ),
       ),

@@ -2,7 +2,8 @@ import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_code_editor/flutter_code_editor.dart';
-import 'package:flutter_highlight/themes/monokai-sublime.dart';
+import 'package:flutter_highlight/themes/darcula.dart';
+import 'package:flutter_tilt/flutter_tilt.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:highlight/highlight_core.dart';
 import 'package:highlight/languages/all.dart';
@@ -34,143 +35,146 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), boxShadow: const <BoxShadow>[BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer)]),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Stack(
-            alignment: AlignmentDirectional.topEnd,
-            children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: StatefulBuilder(
-                  key: _codeKey,
-                  builder: (BuildContext context, void Function(void Function()) _) {
-                    return CodeTheme(
-                      data: CodeThemeData(styles: monokaiSublimeTheme),
-                      child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)),
-                    );
-                  },
-                ),
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.all(4),
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: pink.withOpacity(.2), borderRadius: BorderRadius.circular(5)),
-                    child: StatefulBuilder(
-                      key: _languageNameKey,
-                      builder: (BuildContext context, void Function(void Function()) _) {
-                        return Text(_languageName, style: const TextStyle(color: white, fontSize: 16, fontWeight: FontWeight.w400));
-                      },
-                    ),
+    return Tilt(
+      borderRadius: BorderRadius.circular(15),
+      clipBehavior: Clip.none,
+      lightConfig: const LightConfig(color: transparent, disable: true),
+      shadowConfig: const ShadowConfig(disable: true, color: transparent),
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), boxShadow: const <BoxShadow>[BoxShadow(color: grey, blurRadius: 5, blurStyle: BlurStyle.outer)]),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              alignment: AlignmentDirectional.topEnd,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: StatefulBuilder(
+                    key: _codeKey,
+                    builder: (BuildContext context, void Function(void Function()) _) {
+                      return CodeTheme(
+                        data: CodeThemeData(styles: darculaTheme),
+                        child: CodeField(controller: _codeController, maxLines: 8, wrap: true, gutterStyle: const GutterStyle(width: 20)),
+                      );
+                    },
                   ),
-                  const SizedBox(width: 10),
-                  IconButton(
-                    onPressed: () async {
-                      final TextEditingController searchLanguageController = TextEditingController();
-                      final GlobalKey<State> searchKey = GlobalKey<State>();
-                      await showModalBottomSheet(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return Container(
-                            padding: const EdgeInsets.all(16),
-                            height: 300,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SearchBarAnimation(
-                                  onPressButton: (bool state) {},
-                                  hintText: "Pick your language",
-                                  onChanged: (String text) => searchKey.currentState!.setState(() {}),
-                                  textEditingController: searchLanguageController,
-                                  isOriginalAnimation: true,
-                                  buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                                  trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                                  secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
-                                ),
-                                const SizedBox(height: 10),
-                                Expanded(
-                                  child: StatefulBuilder(
-                                    key: searchKey,
-                                    builder: (BuildContext context, void Function(void Function()) _) {
-                                      final List<String> languages = allLanguages.keys.where((String element) => element.toLowerCase().startsWith(searchLanguageController.text.trim().toLowerCase())).toList();
-                                      return ListView.builder(
-                                        itemCount: languages.length,
-                                        itemBuilder: (BuildContext context, int index) {
-                                          bool hoverState = false;
-                                          return StatefulBuilder(
-                                            builder: (BuildContext context, void Function(void Function()) $) {
-                                              return InkWell(
-                                                highlightColor: transparent,
-                                                hoverColor: transparent,
-                                                splashColor: transparent,
-                                                onHover: (bool state) => $(() => hoverState = state),
-                                                onTap: () {
-                                                  _codeKey.currentState!.setState(() => _languageMode = allLanguages[languages[index]]!);
-                                                  _codeController = CodeController(language: _languageMode, params: const EditorParams(tabSpaces: 4));
-                                                  _languageNameKey.currentState!.setState(() => _languageName = languages[index][0].toUpperCase() + languages[index].substring(1));
-                                                  Navigator.pop(context);
-                                                },
-                                                child: AnimatedScale(
-                                                  duration: 700.ms,
-                                                  scale: hoverState ? 1.02 : 1,
-                                                  child: AnimatedContainer(
-                                                    margin: const EdgeInsets.all(4),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Container(
+                      margin: const EdgeInsets.all(4),
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(color: pink.withOpacity(.2), borderRadius: BorderRadius.circular(5)),
+                      child: StatefulBuilder(
+                        key: _languageNameKey,
+                        builder: (BuildContext context, void Function(void Function()) _) {
+                          return Text(_languageName, style: const TextStyle(color: white, fontSize: 16, fontWeight: FontWeight.w400));
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    IconButton(
+                      onPressed: () async {
+                        final TextEditingController searchLanguageController = TextEditingController();
+                        final GlobalKey<State> searchKey = GlobalKey<State>();
+                        await showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              padding: const EdgeInsets.all(16),
+                              height: 300,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  SearchBarAnimation(
+                                    hintText: "Pick your language",
+                                    onChanged: (String text) => searchKey.currentState!.setState(() {}),
+                                    textEditingController: searchLanguageController,
+                                    isOriginalAnimation: true,
+                                    buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                                    trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                                    secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Expanded(
+                                    child: StatefulBuilder(
+                                      key: searchKey,
+                                      builder: (BuildContext context, void Function(void Function()) _) {
+                                        final List<String> languages = allLanguages.keys.where((String element) => element.toLowerCase().startsWith(searchLanguageController.text.trim().toLowerCase())).toList();
+                                        return ListView.builder(
+                                          itemCount: languages.length,
+                                          itemBuilder: (BuildContext context, int index) {
+                                            bool hoverState = false;
+                                            return StatefulBuilder(
+                                              builder: (BuildContext context, void Function(void Function()) $) {
+                                                return InkWell(
+                                                  highlightColor: transparent,
+                                                  hoverColor: transparent,
+                                                  splashColor: transparent,
+                                                  onHover: (bool state) => $(() => hoverState = state),
+                                                  onTap: () {
+                                                    _codeKey.currentState!.setState(() => _languageMode = allLanguages[languages[index]]!);
+                                                    _codeController = CodeController(language: _languageMode, params: const EditorParams(tabSpaces: 4));
+                                                    _languageNameKey.currentState!.setState(() => _languageName = languages[index][0].toUpperCase() + languages[index].substring(1));
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: AnimatedScale(
                                                     duration: 700.ms,
-                                                    padding: const EdgeInsets.all(8),
-                                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
-                                                    child: Row(
-                                                      children: <Widget>[
-                                                        const Icon(FontAwesomeIcons.code, size: 15, color: pink),
-                                                        const SizedBox(width: 10),
-                                                        Text(
-                                                          languages[index][0].toUpperCase() + languages[index].substring(1),
-                                                          style: TextStyle(
-                                                            fontSize: hoverState ? 17 : 16,
-                                                            fontWeight: hoverState ? FontWeight.w500 : FontWeight.w400,
+                                                    scale: hoverState ? 1.02 : 1,
+                                                    child: AnimatedContainer(
+                                                      margin: const EdgeInsets.all(4),
+                                                      duration: 700.ms,
+                                                      padding: const EdgeInsets.all(8),
+                                                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: hoverState ? pink : null),
+                                                      child: Row(
+                                                        children: <Widget>[
+                                                          const Icon(FontAwesomeIcons.code, size: 15, color: pink),
+                                                          const SizedBox(width: 10),
+                                                          Text(
+                                                            languages[index][0].toUpperCase() + languages[index].substring(1),
+                                                            style: TextStyle(
+                                                              fontSize: hoverState ? 17 : 16,
+                                                              fontWeight: hoverState ? FontWeight.w500 : FontWeight.w400,
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            },
-                                          );
-                                        },
-                                      );
-                                    },
+                                                );
+                                              },
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                      ).then((value) => searchLanguageController.dispose());
-                    },
-                    icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(height: 5),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: CodeField(
-              controller: _descriptionController,
-              maxLines: 5,
-              wrap: true,
-              gutterStyle: const GutterStyle(width: 20),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      icon: const Icon(FontAwesomeIcons.code, size: 15, color: pink),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(height: 5),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: CodeTheme(
+                data: CodeThemeData(styles: darculaTheme),
+                child: CodeField(controller: _descriptionController, maxLines: 5, wrap: true, gutterStyle: const GutterStyle(width: 20)),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

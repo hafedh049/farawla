@@ -36,7 +36,6 @@ class _FarawelsState extends State<Farawels> {
                       final GlobalKey<State> pictureKey = GlobalKey<State>();
                       Uint8List picture = (await rootBundle.load("assets/default.jpg")).buffer.asUint8List();
                       final TextEditingController titleController = TextEditingController();
-                      final TextEditingController descriptionController = TextEditingController();
 
                       // ignore: use_build_context_synchronously
                       await showModalBottomSheet(
@@ -70,35 +69,6 @@ class _FarawelsState extends State<Farawels> {
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  const SizedBox(height: 20),
-                                  Stack(
-                                    alignment: AlignmentDirectional.topEnd,
-                                    children: <Widget>[
-                                      Container(
-                                        padding: const EdgeInsets.all(8),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(5),
-                                          color: dark,
-                                          boxShadow: <BoxShadow>[BoxShadow(color: pink.withOpacity(.2), blurStyle: BlurStyle.outer, offset: const Offset(2, 4))],
-                                        ),
-                                        child: TextField(
-                                          maxLines: 5,
-                                          controller: descriptionController,
-                                          style: const TextStyle(color: pink, fontSize: 16, fontWeight: FontWeight.w500),
-                                          decoration: const InputDecoration(
-                                            border: InputBorder.none,
-                                            hintText: "Description",
-                                            hintStyle: TextStyle(color: pink, fontSize: 16, fontWeight: FontWeight.w500),
-                                          ),
-                                        ),
-                                      ),
-                                      IconButton(
-                                        splashColor: pink.withOpacity(.6),
-                                        onPressed: () {},
-                                        icon: const Icon(FontAwesomeIcons.x, color: pink, size: 15),
-                                      ),
-                                    ],
                                   ),
                                   const SizedBox(height: 20),
                                   StatefulBuilder(
@@ -171,11 +141,13 @@ class _FarawelsState extends State<Farawels> {
                                             box.putAll(
                                               <dynamic, dynamic>{
                                                 "title": titleController.text.trim(),
-                                                "description": descriptionController.text.trim(),
                                                 "data": [],
                                                 "picture": picture,
                                               },
                                             );
+                                            _boxesKey.currentState!.setState(() {});
+                                            // ignore: use_build_context_synchronously
+                                            Navigator.pop(context);
                                           }
                                         },
                                         child: Container(
@@ -196,12 +168,7 @@ class _FarawelsState extends State<Farawels> {
                             ),
                           );
                         },
-                      ).then(
-                        (void value) {
-                          titleController.dispose();
-                          descriptionController.dispose();
-                        },
-                      );
+                      ).then((void value) => titleController.dispose());
                     },
                     child: Container(
                       width: 40,
@@ -235,9 +202,7 @@ class _FarawelsState extends State<Farawels> {
                                     runAlignment: WrapAlignment.center,
                                     runSpacing: 20,
                                     spacing: 20,
-                                    children: <Widget>[
-                                      for (Box box in boxes) FarawelsContainer(box: box),
-                                    ],
+                                    children: <Widget>[for (Box box in boxes) FarawelsContainer(box: box)],
                                   );
                           } else if (snapshot.connectionState == ConnectionState.waiting) {
                             return const CircularProgressIndicator(color: pink);
