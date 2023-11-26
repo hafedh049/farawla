@@ -78,7 +78,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               SearchBarAnimation(
-                                onChanged: (String text) => searchKey,
+                                onChanged: (String text) => searchKey.currentState!.setState(() {}),
                                 textEditingController: searchLanguageController,
                                 isOriginalAnimation: true,
                                 buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
