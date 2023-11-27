@@ -70,9 +70,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                         data: CodeThemeData(styles: darculaTheme),
                         child: CodeField(
                           controller: _codeController,
-                          maxLines: 8,
                           wrap: true,
-                          gutterStyle: const GutterStyle(width: 20),
                           onChanged: (String text) {
                             final List data = boxes[widget.boxIndex].get("data");
                             data[widget.tileIndex] = <dynamic, dynamic>{"language": _languageName, "code": _codeController.text.trim(), "explication": _descriptionController.text.trim()};
@@ -197,9 +195,7 @@ class _FarawlaContainerState extends State<FarawlaContainer> {
                 data: CodeThemeData(styles: darculaTheme),
                 child: CodeField(
                   controller: _descriptionController,
-                  maxLines: 5,
                   wrap: true,
-                  gutterStyle: const GutterStyle(width: 20),
                   onChanged: (String text) {
                     final List data = boxes[widget.boxIndex].get("data");
                     data[widget.tileIndex] = <dynamic, dynamic>{"language": _languageName, "code": _codeController.text.trim(), "explication": _descriptionController.text.trim()};
