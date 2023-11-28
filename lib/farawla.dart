@@ -22,7 +22,12 @@ class _FarawlaState extends State<Farawla> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {}
+          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
+            final List data = boxes[widget.boxIndex].get("data");
+            data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+            await boxes[widget.boxIndex].put("data", data);
+            _tilesKey.currentState!.setState(() {});
+          }
         }
       },
       child: Scaffold(
