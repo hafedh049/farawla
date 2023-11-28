@@ -26,7 +26,7 @@ class _FarawlaState extends State<Farawla> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
+          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
             final List data = boxes[widget.boxIndex].get("data");
             data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
             await boxes[widget.boxIndex].put("data", data);
