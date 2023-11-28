@@ -19,6 +19,7 @@ class Farawla extends StatefulWidget {
 class _FarawlaState extends State<Farawla> {
   final GlobalKey<State> _tilesKey = GlobalKey<State>();
   final ScreenshotController _screenshotController = ScreenshotController();
+  final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class _FarawlaState extends State<Farawla> {
           ),
           Expanded(
             child: RawKeyboardListener(
-              focusNode: FocusNode(),
+              focusNode: ,
               onKey: (RawKeyEvent event) async {
                 print(1);
                 if (event is RawKeyDownEvent) {
