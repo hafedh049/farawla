@@ -156,7 +156,7 @@ class _FarawelsState extends State<Farawels> {
                             );
                           },
                         ).then((void value) => titleController.dispose());
-                      };
+                      }
 
   @override
   Widget build(BuildContext context) {
