@@ -31,6 +31,7 @@ class _FarawlaState extends State<Farawla> {
             await boxes[widget.boxIndex].put("data", data);
             _tilesKey.currentState!.setState(() {});
           }
+          if(event.isControlPressed && const<LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter,LogicalKeyboardKey.enter].contains(event.logicalKey) )
         }
       },
       child: Scaffold(
