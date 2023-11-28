@@ -17,7 +17,15 @@ class _FarawlaState extends State<Farawla> {
   final GlobalKey<State> _tilesKey = GlobalKey<State>();
   @override
   Widget build(BuildContext context) {
-    return widget(
+    return KeyboardRawListener(
+      focusNode: FocusNode(),
+      onKey: (RawKeyEvent event) async {
+        if (event is RawKeyDownEvent) {
+          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
+            await tool();
+          }
+        }
+      },
       child: Scaffold(
         body: Column(
           children: <Widget>[
