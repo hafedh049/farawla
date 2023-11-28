@@ -22,36 +22,36 @@ class _FarawlaState extends State<Farawla> {
 
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
-      focusNode: FocusNode(),
-      onKey: (RawKeyEvent event) async {
-        print(1);
-        if (event is RawKeyDownEvent) {
-          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
-            final List data = boxes[widget.boxIndex].get("data");
-            data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
-            await boxes[widget.boxIndex].put("data", data);
-            _tilesKey.currentState!.setState(() {});
-          }
-          if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
-            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
-          }
-        }
-      },
-      child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            WindowTitleBarBox(
-              child: Row(
-                children: <Widget>[
-                  Expanded(child: MoveWindow()),
-                  MinimizeWindowButton(),
-                  MaximizeWindowButton(),
-                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                ],
-              ),
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          WindowTitleBarBox(
+            child: Row(
+              children: <Widget>[
+                Expanded(child: MoveWindow()),
+                MinimizeWindowButton(),
+                MaximizeWindowButton(),
+                CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+              ],
             ),
-            Expanded(
+          ),
+          Expanded(
+            child: RawKeyboardListener(
+              focusNode: FocusNode(),
+              onKey: (RawKeyEvent event) async {
+                print(1);
+                if (event is RawKeyDownEvent) {
+                  if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
+                    final List data = boxes[widget.boxIndex].get("data");
+                    data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+                    await boxes[widget.boxIndex].put("data", data);
+                    _tilesKey.currentState!.setState(() {});
+                  }
+                  if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
+                    _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
+                  }
+                }
+              },
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(
@@ -120,8 +120,8 @@ class _FarawlaState extends State<Farawla> {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
