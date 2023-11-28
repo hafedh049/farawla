@@ -20,12 +20,6 @@ class _FarawlaState extends State<Farawla> {
   final ScreenshotController _screenshotController = ScreenshotController();
 
   @override
-  void dispose() {
-    _screenshotController
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
       focusNode: FocusNode(),
