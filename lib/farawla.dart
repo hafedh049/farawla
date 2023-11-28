@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:screenshot/screenshot.dart';
 
 class Farawla extends StatefulWidget {
   const Farawla({super.key, required this.boxIndex});
@@ -95,12 +96,14 @@ class _FarawlaState extends State<Farawla> {
                         return Expanded(
                           child: boxes[widget.boxIndex].get("data").isEmpty
                               ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
-                              : ListView.builder(
-                                  shrinkWrap: true,
-                                  itemCount: boxes[widget.boxIndex].get("data").length,
-                                  itemBuilder: (BuildContext context, int index) {
-                                    return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
-                                  },
+                              : Screenshot(
+                                  child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: boxes[widget.boxIndex].get("data").length,
+                                    itemBuilder: (BuildContext context, int index) {
+                                      return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
+                                    },
+                                  ),
                                 ),
                         );
                       },
