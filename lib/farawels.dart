@@ -164,7 +164,7 @@ class _FarawelsState extends State<Farawels> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
+          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
             await tool();
           }
         }
