@@ -39,7 +39,7 @@ class _FarawlaState extends State<Farawla> {
         }
       },
       child: Container(
-        color: grey.withOpacity(.05),
+        color: grey.withOpacity(.5),
         child: Scaffold(
           body: Column(
             children: <Widget>[
