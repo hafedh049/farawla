@@ -2,6 +2,7 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawla_container.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 
@@ -21,9 +22,7 @@ class _FarawlaState extends State<Farawla> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
-            await tool();
-          }
+          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {}
         }
       },
       child: Scaffold(
