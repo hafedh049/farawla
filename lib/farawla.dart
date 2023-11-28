@@ -38,7 +38,7 @@ class _FarawlaState extends State<Farawla> {
           ),
           Expanded(
             child: RawKeyboardListener(
-              focusNode: ,
+              focusNode: _focusNode,
               onKey: (RawKeyEvent event) async {
                 print(1);
                 if (event is RawKeyDownEvent) {
