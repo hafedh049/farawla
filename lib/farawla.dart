@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 
 class Farawla extends StatefulWidget {
@@ -31,7 +32,9 @@ class _FarawlaState extends State<Farawla> {
             await boxes[widget.boxIndex].put("data", data);
             _tilesKey.currentState!.setState(() {});
           }
-          if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {}
+          if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
+            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
+          }
         }
       },
       child: Scaffold(
