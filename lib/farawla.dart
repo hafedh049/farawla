@@ -99,7 +99,7 @@ class _FarawlaState extends State<Farawla> {
                           child: boxes[widget.boxIndex].get("data").isEmpty
                               ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
                               : Screenshot(
-                                controller: ,
+                                  controller: _screenshotController,
                                   child: ListView.builder(
                                     shrinkWrap: true,
                                     itemCount: boxes[widget.boxIndex].get("data").length,
