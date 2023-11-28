@@ -38,22 +38,22 @@ class _FarawlaState extends State<Farawla> {
           }
         }
       },
-      child: Container(
-        color: white.withOpacity(.5),
-        child: Scaffold(
-          body: Column(
-            children: <Widget>[
-              WindowTitleBarBox(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(child: MoveWindow()),
-                    MinimizeWindowButton(),
-                    MaximizeWindowButton(),
-                    CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                  ],
-                ),
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            WindowTitleBarBox(
+              child: Row(
+                children: <Widget>[
+                  Expanded(child: MoveWindow()),
+                  MinimizeWindowButton(),
+                  MaximizeWindowButton(),
+                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+                ],
               ),
-              Expanded(
+            ),
+            Expanded(
+              child: Container(
+                color: white.withOpacity(.5),
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
@@ -122,8 +122,8 @@ class _FarawlaState extends State<Farawla> {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
