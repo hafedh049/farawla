@@ -38,7 +38,7 @@ class _FarawlaState extends State<Farawla> {
           }
         }
       },
-      child: GestureDetector(
+      child: SizedBox(
         child: Scaffold(
           body: Column(
             children: <Widget>[
