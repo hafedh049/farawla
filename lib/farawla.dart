@@ -18,6 +18,13 @@ class Farawla extends StatefulWidget {
 class _FarawlaState extends State<Farawla> {
   final GlobalKey<State> _tilesKey = GlobalKey<State>();
   final ScreenshotController _screenshotController = ScreenshotController();
+
+  @override
+  void dispose() {
+    _screenshotController
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
