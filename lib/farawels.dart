@@ -18,42 +18,8 @@ class Farawels extends StatefulWidget {
 
 class _FarawelsState extends State<Farawels> {
   final GlobalKey<State> _boxesKey = GlobalKey<State>();
-  @override
-  Widget build(BuildContext context) {
-    return RawKeyboardListener(
-      focusNode: FocusNode(),
-      onKey: (RawKeyEvent event) {
-        if (event is RawKeyDownEvent) {
-          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
-            print('Control + A pressed');
-            // Your logic for handling Control + A key combination
-          }
-        }
-      },
-      child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            WindowTitleBarBox(
-              child: Row(
-                children: <Widget>[
-                  Expanded(child: MoveWindow()),
-                  MinimizeWindowButton(),
-                  MaximizeWindowButton(),
-                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                ],
-              ),
-            ),
-            Row(
-              children: <Widget>[
-                const Spacer(),
-                Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: <Widget>[
-                    InkWell(
-                      highlightColor: transparent,
-                      hoverColor: transparent,
-                      splashColor: transparent,
-                      onTap: () async {
+
+  Future<void>tool() async {
                         final GlobalKey<State> pictureKey = GlobalKey<State>();
                         Uint8List picture = (await rootBundle.load("assets/default.jpg")).buffer.asUint8List();
                         final TextEditingController titleController = TextEditingController();
@@ -190,7 +156,44 @@ class _FarawelsState extends State<Farawels> {
                             );
                           },
                         ).then((void value) => titleController.dispose());
-                      },
+                      };
+
+  @override
+  Widget build(BuildContext context) {
+    return RawKeyboardListener(
+      focusNode: FocusNode(),
+      onKey: (RawKeyEvent event) {
+        if (event is RawKeyDownEvent) {
+          if (event.logicalKey == LogicalKeyboardKey.numpadAdd && event.isControlPressed) {
+            print('Control + A pressed');
+            // Your logic for handling Control + A key combination
+          }
+        }
+      },
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            WindowTitleBarBox(
+              child: Row(
+                children: <Widget>[
+                  Expanded(child: MoveWindow()),
+                  MinimizeWindowButton(),
+                  MaximizeWindowButton(),
+                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+                ],
+              ),
+            ),
+            Row(
+              children: <Widget>[
+                const Spacer(),
+                Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: <Widget>[
+                    InkWell(
+                      highlightColor: transparent,
+                      hoverColor: transparent,
+                      splashColor: transparent,
+                      onTap: ,
                       child: Container(
                         width: 40,
                         height: 40,
