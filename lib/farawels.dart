@@ -21,6 +21,15 @@ class _FarawelsState extends State<Farawels> {
   @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
+      focusNode: FocusNode(),
+      onKey: (RawKeyEvent event) {
+        if (event is RawKeyDownEvent) {
+          if (event.logicalKey == LogicalKeyboardKey.keyA && event.isControlPressed) {
+            print('Control + A pressed');
+            // Your logic for handling Control + A key combination
+          }
+        }
+      },
       child: Scaffold(
         body: Column(
           children: <Widget>[
