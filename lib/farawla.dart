@@ -69,6 +69,8 @@ class _FarawlaState extends State<Farawla> {
                   const SizedBox(width: 5),
                   const Text("Cancel", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
+                  TextField(),
+                  Expanded(child: MoveWindow()),
                   MinimizeWindowButton(),
                   MaximizeWindowButton(),
                   CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
