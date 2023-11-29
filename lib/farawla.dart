@@ -71,7 +71,7 @@ class _FarawlaState extends State<Farawla> {
                   const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
                   Flexible(
-                    child: Padding(
+                    child: Container(
                       padding: const EdgeInsets.only(top: 8),
                       child: TextField(
                         controller: null,
