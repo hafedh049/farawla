@@ -141,7 +141,7 @@ class KeyboardNumPaddAddIntent extends Intent {
   const KeyboardNumPaddAddIntent();
 }
 
-class KeyboardNumPaddAddIntent extends Intent {
+class KeyboardNumPadIntent extends Intent {
   const KeyboardNumPaddAddIntent();
 }
 
