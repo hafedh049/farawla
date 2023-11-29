@@ -26,12 +26,7 @@ class _FarawlaState extends State<Farawla> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
-            final List data = boxes[widget.boxIndex].get("data");
-            data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
-            await boxes[widget.boxIndex].put("data", data);
-            _tilesKey.currentState!.setState(() {});
-          }
+          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {}
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
             _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
           }
