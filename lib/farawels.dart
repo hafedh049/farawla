@@ -199,7 +199,7 @@ class _FarawelsState extends State<Farawels> {
               children: <Widget>[
                 const Spacer(),
                 AnimSearchBar(
-                  width: 200,
+                  width: 300,
                   textController: _searchController,
                   onSuffixTap: () {},
                   onSubmitted: (String text) {},
