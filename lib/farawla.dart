@@ -117,7 +117,6 @@ class _FarawlaState extends State<Farawla> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
                     StatefulBuilder(
                       key: _tilesKey,
                       builder: (BuildContext context, void Function(void Function()) _) {
