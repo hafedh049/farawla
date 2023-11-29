@@ -203,6 +203,7 @@ class _FarawelsState extends State<Farawels> {
                   textController: _searchController,
                   onSuffixTap: () {},
                   onSubmitted: (String text) {},
+                  textFieldColor: null,
                 ),
                 const Spacer(),
                 Stack(
