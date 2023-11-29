@@ -1,3 +1,4 @@
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawels_container.dart';
 import 'package:farawla/utils/callbacks.dart';
@@ -195,6 +196,7 @@ class _FarawelsState extends State<Farawels> {
             Row(
               children: <Widget>[
                 const Spacer(),
+                AnimSearchBar(width: 200, textController: , onSuffixTap: onSuffixTap, onSubmitted: onSubmitted)
                 const Spacer(),
                 Stack(
                   alignment: AlignmentDirectional.center,
