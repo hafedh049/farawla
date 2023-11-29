@@ -198,17 +198,14 @@ class _FarawelsState extends State<Farawels> {
             Row(
               children: <Widget>[
                 const Spacer(),
-                AnimSearchBar(
-                  width: 300,
-                  textController: _searchController,
-                  onSuffixTap: () {},
-                  onSubmitted: (String text) {},
-                  textFieldColor: null,
-                  textFieldIconColor: pink,
-                  color: null,
-                  boxShadow: false,
-                  searchIconColor: pink,
-                  style: const TextStyle(fontSize: 14, color: pink),
+                SearchBarAnimation(
+                  hintText: "Pick your language",
+                  onChanged: (String text) => searchKey.currentState!.setState(() {}),
+                  textEditingController: searchLanguageController,
+                  isOriginalAnimation: true,
+                  buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                  trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
+                  secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
                 ),
                 const Spacer(),
                 Stack(
