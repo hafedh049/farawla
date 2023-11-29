@@ -74,7 +74,7 @@ class _FarawlaState extends State<Farawla> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: AnimSearchBar(
-                      width: width,
+                      width: 200,
                       textController: textController,
                       onSuffixTap: onSuffixTap,
                       onSubmitted: onSubmitted,
