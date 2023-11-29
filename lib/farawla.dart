@@ -71,11 +71,9 @@ class _FarawlaState extends State<Farawla> {
                   const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
                   Flexible(
-                    child: Container(
-                      child: TextField(
-                        controller: null,
-                        decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)), suffixIcon: IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.x))),
-                      ),
+                    child: TextField(
+                      controller: null,
+                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)), suffixIcon: IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.x))),
                     ),
                   ),
                   Expanded(child: MoveWindow()),
