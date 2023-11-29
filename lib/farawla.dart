@@ -56,10 +56,7 @@ class _FarawlaState extends State<Farawla> {
             ),
             KeyboardEnterIntent: CallbackAction<KeyboardNumPadAddIntent>(
               onInvoke: (KeyboardNumPadAddIntent intent) async {
-                final List data = boxes[widget.boxIndex].get("data");
-                data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
-                await boxes[widget.boxIndex].put("data", data);
-                _tilesKey.currentState!.setState(() {});
+                _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${Random().nextInt(4000)}.png');
                 return true;
               },
             ),
