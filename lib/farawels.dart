@@ -9,6 +9,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 
 class Farawels extends StatefulWidget {
   const Farawels({super.key});
@@ -201,7 +202,7 @@ class _FarawelsState extends State<Farawels> {
                 SearchBarAnimation(
                   hintText: "Pick your language",
                   onChanged: (String text) => searchKey.currentState!.setState(() {}),
-                  textEditingController: searchLanguageController,
+                  textEditingController: _searchController,
                   isOriginalAnimation: true,
                   buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
                   trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
