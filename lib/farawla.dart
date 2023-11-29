@@ -146,7 +146,3 @@ class _FarawlaState extends State<Farawla> {
     );
   }
 }
-
-class KeyboardIntent extends Intent {
-  const KeyboardIntent();
-}
