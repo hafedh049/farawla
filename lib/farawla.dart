@@ -42,7 +42,7 @@ class _FarawlaState extends State<Farawla> {
             await boxes[widget.boxIndex].put("data", data);
             _tilesKey.currentState!.setState(() {});
           }
-          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
+          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadSubtract) {
             final List data = boxes[widget.boxIndex].get("data");
             data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
             await boxes[widget.boxIndex].put("data", data);
