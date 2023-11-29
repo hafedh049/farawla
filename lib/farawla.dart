@@ -77,11 +77,7 @@ class _FarawlaState extends State<Farawla> {
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
                         suffixIcon: IconButton(
                           onPressed: () {},
-                          icon: const Icon(
-                            FontAwesomeIcons.x,
-                            size: 15,
-                            color: pink,
-                          ),
+                          icon: const Icon(FontAwesomeIcons.x, size: 15, color: pink),
                         ),
                       ),
                     ),
