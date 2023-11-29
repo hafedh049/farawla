@@ -25,6 +25,7 @@ class _FarawlaState extends State<Farawla> {
     return RawKeyboardListener(
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
+        print(1);
         if (event is RawKeyDownEvent) {
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
             final List data = boxes[widget.boxIndex].get("data");
@@ -38,10 +39,10 @@ class _FarawlaState extends State<Farawla> {
         }
       },
       child: Shortcuts(
-        shortcuts: const <ShortcutActivator, Intent>{
-          SingleActivator(LogicalKeyboardKey.numpadAdd, control: true): KeyboardNumPadAddIntent(),
-          SingleActivator(LogicalKeyboardKey.enter, control: true): KeyboardNumPadEnterIntent(),
-          SingleActivator(LogicalKeyboardKey.numpadEnter, control: true): KeyboardNumPadEnterIntent(),
+        shortcuts: const <ShortcutActivator, KeyboardIntent>{
+          SingleActivator(LogicalKeyboardKey.numpadAdd, control: true): KeyboardNumPaddAddIntent(),
+          SingleActivator(LogicalKeyboardKey.enter, control: true): KeyboardIntent(),
+          SingleActivator(LogicalKeyboardKey.numpadEnter, control: true): KeyboardIntent(),
         },
         child: Actions(
           actions: <Type, Action<Intent>>{},
@@ -144,6 +145,6 @@ class KeyboardNumPadEnterIntent extends Intent {
   const KeyboardNumPadEnterIntent();
 }
 
-class KeyboardEnterIntent extends Intent {
-  const KeyboardEnterIntent();
+class  extends Intent {
+  const KeyboardNumPaddAddIntent();
 }
