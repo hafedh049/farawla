@@ -40,10 +40,12 @@ class _FarawlaState extends State<Farawla> {
         child: Actions(
           actions: <Type, Action<Intent>>{
             KeyboardNumPadAddIntent: CallbackAction<KeyboardNumPadAddIntent>(
-              onInvoke: (KeyboardNumPadAddIntent intent) { final List data = boxes[widget.boxIndex].get("data");
-            data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
-            await boxes[widget.boxIndex].put("data", data);
-            _tilesKey.currentState!.setState(() {});},
+              onInvoke: (KeyboardNumPadAddIntent intent) async {
+                final List data = boxes[widget.boxIndex].get("data");
+                data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+                await boxes[widget.boxIndex].put("data", data);
+                _tilesKey.currentState!.setState(() {});
+              },
             ),
           },
           child: Scaffold(
