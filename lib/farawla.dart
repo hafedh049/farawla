@@ -72,7 +72,15 @@ class _FarawlaState extends State<Farawla> {
                   const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
                   Expanded(
-                    child: Padding(padding: const EdgeInsets.only(top: 8.0), child: AnimSearchBar(width: width, textController: textController, onSuffixTap: onSuffixTap, onSubmitted: onSubmitted)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: AnimSearchBar(
+                        width: width,
+                        textController: textController,
+                        onSuffixTap: onSuffixTap,
+                        onSubmitted: onSubmitted,
+                      ),
+                    ),
                   ),
                   Expanded(child: MoveWindow()),
                   MinimizeWindowButton(),
