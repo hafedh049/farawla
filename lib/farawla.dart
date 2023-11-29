@@ -25,6 +25,7 @@ class _FarawlaState extends State<Farawla> {
   @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
+      autofocus: true,
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         print(1);
