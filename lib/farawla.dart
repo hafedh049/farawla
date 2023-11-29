@@ -77,26 +77,24 @@ class _FarawlaState extends State<Farawla> {
                 padding: const EdgeInsets.all(16),
                 child: Stack(
                   children: <Widget>[
-                    SingleChildScrollView(
-                      child: StatefulBuilder(
-                        key: _tilesKey,
-                        builder: (BuildContext context, void Function(void Function()) _) {
-                          return Positioned.fill(
-                            child: boxes[widget.boxIndex].get("data").isEmpty
-                                ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
-                                : Screenshot(
-                                    controller: _screenshotController,
-                                    child: ListView.builder(
-                                      padding: EdgeInsets.zero,
-                                      itemCount: boxes[widget.boxIndex].get("data").length,
-                                      itemBuilder: (BuildContext context, int index) {
-                                        return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
-                                      },
-                                    ),
+                    StatefulBuilder(
+                      key: _tilesKey,
+                      builder: (BuildContext context, void Function(void Function()) _) {
+                        return Positioned.fill(
+                          child: boxes[widget.boxIndex].get("data").isEmpty
+                              ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
+                              : Screenshot(
+                                  controller: _screenshotController,
+                                  child: ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    itemCount: boxes[widget.boxIndex].get("data").length,
+                                    itemBuilder: (BuildContext context, int index) {
+                                      return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
+                                    },
                                   ),
-                          );
-                        },
-                      ),
+                                ),
+                        );
+                      },
                     ),
                     Row(
                       children: <Widget>[
