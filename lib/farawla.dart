@@ -22,6 +22,7 @@ class Farawla extends StatefulWidget {
 class _FarawlaState extends State<Farawla> {
   final GlobalKey<State> _tilesKey = GlobalKey<State>();
   final ScreenshotController _screenshotController = ScreenshotController();
+  final TextEditingController _searchController = TextEditingController();
   final FocusNode _keyFocusNode = FocusNode();
 
   @override
@@ -75,7 +76,7 @@ class _FarawlaState extends State<Farawla> {
                     padding: const EdgeInsets.only(top: 8.0),
                     child: AnimSearchBar(
                       width: 200,
-                      textController: textController,
+                      textController: _searchController,
                       onSuffixTap: onSuffixTap,
                       onSubmitted: onSubmitted,
                     ),
