@@ -38,7 +38,7 @@ class _FarawlaState extends State<Farawla> {
         }
       },
       child: Shortcuts(
-        shortcuts: const <ShortcutActivator, KeyboardIntent>{
+        shortcuts: const <ShortcutActivator, Intent>{
           SingleActivator(LogicalKeyboardKey.numpadAdd, control: true): KeyboardNumPaddAddIntent(),
           SingleActivator(LogicalKeyboardKey.enter, control: true): KeyboardIntent(),
           SingleActivator(LogicalKeyboardKey.numpadEnter, control: true): KeyboardIntent(),
