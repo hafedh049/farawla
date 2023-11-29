@@ -26,9 +26,7 @@ class _FarawlaState extends State<Farawla> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
-            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
-          }
+          if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {}
         }
       },
       child: Shortcuts(
@@ -48,7 +46,7 @@ class _FarawlaState extends State<Farawla> {
                 return true;
               },
             ),
-            KeyboardNumPadAddIntent: CallbackAction<KeyboardNumPadAddIntent>(
+            KeyboardNumPadEnterIntent: CallbackAction<KeyboardNumPadAddIntent>(
               onInvoke: (KeyboardNumPadAddIntent intent) async {
                 final List data = boxes[widget.boxIndex].get("data");
                 data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
@@ -57,7 +55,7 @@ class _FarawlaState extends State<Farawla> {
                 return true;
               },
             ),
-            KeyboardNumPadAddIntent: CallbackAction<KeyboardNumPadAddIntent>(
+            KeyboardEnterIntent: CallbackAction<KeyboardNumPadAddIntent>(
               onInvoke: (KeyboardNumPadAddIntent intent) async {
                 final List data = boxes[widget.boxIndex].get("data");
                 data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
