@@ -152,7 +152,7 @@ class _FarawlaState extends State<Farawla> {
               ],
             ),
             Align(
-              alignment: Alignment.topCenter,
+              alignment: Alignment(1, 0),
               child: SizedBox(
                 height: 30,
                 child: AnimSearchBar(
