@@ -75,7 +75,7 @@ class _FarawlaState extends State<Farawla> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Column(
+                child: Stack(
                   children: <Widget>[
                     Row(
                       children: <Widget>[
