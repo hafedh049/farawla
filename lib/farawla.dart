@@ -86,7 +86,7 @@ class _FarawlaState extends State<Farawla> {
                               : Screenshot(
                                   controller: _screenshotController,
                                   child: ListView.builder(
-                                    shrinkWrap: true,
+                                    padding: EdgeInsets.zero,
                                     itemCount: boxes[widget.boxIndex].get("data").length,
                                     itemBuilder: (BuildContext context, int index) {
                                       return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
