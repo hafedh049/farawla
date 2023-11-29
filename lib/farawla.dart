@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawla_container.dart';
 import 'package:farawla/utils/globals.dart';
@@ -34,7 +36,7 @@ class _FarawlaState extends State<Farawla> {
             _tilesKey.currentState!.setState(() {});
           }
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
-            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
+            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${Random().nextInt(4000)}.png');
           }
         }
       },
