@@ -26,7 +26,6 @@ class _FarawlaState extends State<Farawla> {
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
-          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {}
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
             _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '1.png');
           }
