@@ -56,6 +56,7 @@ class _FarawlaState extends State<Farawla> {
         },
         child: Scaffold(
           body: InkWell(
+            onTap: () {},
             child: Column(
               children: <Widget>[
                 WindowTitleBarBox(
