@@ -21,11 +21,7 @@ void showSnack(String msg, BuildContext context) {
     elevation: 0,
     behavior: SnackBarBehavior.floating,
     backgroundColor: Colors.transparent,
-    content: AwesomeSnackbarContent(
-      title: 'Hi!',
-      message: msg,
-      contentType: ContentType.success,
-    ),
+    content: AwesomeSnackbarContent(title: 'Hi!', message: msg, contentType: ContentType.success),
   );
 
   ScaffoldMessenger.of(context)
