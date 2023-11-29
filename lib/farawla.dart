@@ -1,4 +1,3 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawla_container.dart';
 import 'package:farawla/utils/callbacks.dart';
