@@ -1,4 +1,3 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawels_container.dart';
 import 'package:farawla/utils/callbacks.dart';
@@ -9,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
-import 'package:searchbar_animation/searchbar_animation.dart';
 
 class Farawels extends StatefulWidget {
   const Farawels({super.key});
