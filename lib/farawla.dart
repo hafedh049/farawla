@@ -60,25 +60,25 @@ class _FarawlaState extends State<Farawla> {
         }
       },
       child: Scaffold(
-        body: (
-          child: Column(
-            children: <Widget>[
-              WindowTitleBarBox(
-                child: Row(
-                  children: <Widget>[
-                    Expanded(child: MoveWindow()),
-                    MinimizeWindowButton(),
-                    MaximizeWindowButton(),
-                    CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                  ],
-                ),
+        body: Column(
+          children: <Widget>[
+            WindowTitleBarBox(
+              child: Row(
+                children: <Widget>[
+                  Expanded(child: MoveWindow()),
+                  MinimizeWindowButton(),
+                  MaximizeWindowButton(),
+                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+                ],
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Stack(
-                    children: <Widget>[
-                      StatefulBuilder(
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Stack(
+                  children: <Widget>[
+                    SingleChildScrollView(
+                      child: StatefulBuilder(
                         key: _tilesKey,
                         builder: (BuildContext context, void Function(void Function()) _) {
                           return Positioned.fill(
@@ -97,52 +97,52 @@ class _FarawlaState extends State<Farawla> {
                           );
                         },
                       ),
-                      Row(
-                        children: <Widget>[
-                          InkWell(
-                            highlightColor: transparent,
-                            hoverColor: transparent,
-                            splashColor: transparent,
-                            onTap: () => Navigator.pop(context),
-                            child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
-                              child: const Icon(FontAwesomeIcons.chevronLeft, size: 20, color: white),
-                            ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        InkWell(
+                          highlightColor: transparent,
+                          hoverColor: transparent,
+                          splashColor: transparent,
+                          onTap: () => Navigator.pop(context),
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
+                            child: const Icon(FontAwesomeIcons.chevronLeft, size: 20, color: white),
                           ),
-                          const Spacer(),
-                          Stack(
-                            alignment: AlignmentDirectional.center,
-                            children: <Widget>[
-                              InkWell(
-                                highlightColor: transparent,
-                                hoverColor: transparent,
-                                splashColor: transparent,
-                                onTap: () async {
-                                  final List data = boxes[widget.boxIndex].get("data");
-                                  data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
-                                  await boxes[widget.boxIndex].put("data", data);
-                                  _tilesKey.currentState!.setState(() {});
-                                },
-                                child: Container(
-                                  width: 40,
-                                  height: 40,
-                                  decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
-                                  child: const Icon(FontAwesomeIcons.plus, size: 20, color: white),
-                                ),
+                        ),
+                        const Spacer(),
+                        Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: <Widget>[
+                            InkWell(
+                              highlightColor: transparent,
+                              hoverColor: transparent,
+                              splashColor: transparent,
+                              onTap: () async {
+                                final List data = boxes[widget.boxIndex].get("data");
+                                data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+                                await boxes[widget.boxIndex].put("data", data);
+                                _tilesKey.currentState!.setState(() {});
+                              },
+                              child: Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
+                                child: const Icon(FontAwesomeIcons.plus, size: 20, color: white),
                               ),
-                              IgnorePointer(ignoring: true, child: LottieBuilder.asset("assets/add.json", width: 60, height: 60)),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                            ),
+                            IgnorePointer(ignoring: true, child: LottieBuilder.asset("assets/add.json", width: 60, height: 60)),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
