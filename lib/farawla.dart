@@ -78,8 +78,8 @@ class _FarawlaState extends State<Farawla> {
                     child: AnimSearchBar(
                       width: 200,
                       textController: _searchController,
-                      onSuffixTap: onSuffixTap,
-                      onSubmitted: onSubmitted,
+                      onSuffixTap: () {},
+                      onSubmitted: (String text) {},
                     ),
                   ),
                   Expanded(child: MoveWindow()),
