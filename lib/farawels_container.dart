@@ -19,7 +19,7 @@ class _FarawelsContainerState extends State<FarawelsContainer> {
       hoverColor: transparent,
       splashColor: transparent,
       highlightColor: transparent,
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => RawKeyboardListener(focusNode: Focus, child: Farawla(boxIndex: widget.boxIndex)))),
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => RawKeyboardListener(child: Farawla(boxIndex: widget.boxIndex)))),
       onHover: (bool state) => setState(() => _state = state),
       child: Tilt(
         borderRadius: BorderRadius.circular(15),
