@@ -69,7 +69,7 @@ class _FarawlaState extends State<Farawla> {
                   const SizedBox(width: 5),
                   const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
-                  TextField(),
+                  Flexible(child: TextField()),
                   Expanded(child: MoveWindow()),
                   MinimizeWindowButton(),
                   MaximizeWindowButton(),
