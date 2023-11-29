@@ -27,7 +27,7 @@ class _FarawelsContainerState extends State<FarawelsContainer> {
                   onKey: (a) {
                     print(a.character);
                   },
-                  child: Farawla(boxIndex: widget.boxIndex)))),
+                  child: InkWell(child: Farawla(boxIndex: widget.boxIndex))))),
       onHover: (bool state) => setState(() => _state = state),
       child: Tilt(
         borderRadius: BorderRadius.circular(15),
