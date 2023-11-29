@@ -78,7 +78,7 @@ class _FarawlaState extends State<Farawla> {
                       child: TextField(
                         controller: null,
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                         ),
                       ),
                     ),
