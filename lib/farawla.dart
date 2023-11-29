@@ -25,7 +25,6 @@ class _FarawlaState extends State<Farawla> {
 
   @override
   void dispose() {
-    _searchController.dispose();
     _keyFocusNode.dispose();
     super.dispose();
   }
