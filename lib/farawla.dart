@@ -1,3 +1,4 @@
+import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawla_container.dart';
 import 'package:farawla/utils/callbacks.dart';
@@ -71,7 +72,7 @@ class _FarawlaState extends State<Farawla> {
                   const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
                   Expanded(
-                    child: Padding(padding: const EdgeInsets.only(top: 8.0), child: AnimTe),
+                    child: Padding(padding: const EdgeInsets.only(top: 8.0), child: AnimSearchBar(width: width, textController: textController, onSuffixTap: onSuffixTap, onSubmitted: onSubmitted)),
                   ),
                   Expanded(child: MoveWindow()),
                   MinimizeWindowButton(),
