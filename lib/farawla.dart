@@ -45,6 +45,7 @@ class _FarawlaState extends State<Farawla> {
                 data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
                 await boxes[widget.boxIndex].put("data", data);
                 _tilesKey.currentState!.setState(() {});
+                return true
               },
             ),
           },
