@@ -75,7 +75,7 @@ class _FarawlaState extends State<Farawla> {
                       padding: const EdgeInsets.only(top: 8.0),
                       child: TextField(
                         controller: null,
-                        style: TextStyle(fontSize: 14),
+                        style: TextStyle(fontSize: 12),
                         decoration: InputDecoration(
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
                           suffixIcon: IconButton(
