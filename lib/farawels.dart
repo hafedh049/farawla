@@ -193,7 +193,7 @@ class _FarawelsState extends State<Farawels> {
               ),
             ),
             Stack(
-              children: [
+              children: <Widget>[
                 Row(
                   children: <Widget>[
                     const Spacer(),
