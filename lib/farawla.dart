@@ -28,7 +28,6 @@ class _FarawlaState extends State<Farawla> {
       autofocus: true,
       focusNode: FocusNode(),
       onKey: (RawKeyEvent event) async {
-        print(1);
         if (event is RawKeyDownEvent) {
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
             final List data = boxes[widget.boxIndex].get("data");
