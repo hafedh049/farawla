@@ -81,12 +81,12 @@ class _FarawlaState extends State<Farawla> {
                       CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
                     ],
                   ),
-                  AnimSearchBar(
-                    width: 200,
-                    textController: _searchController,
-                    onSuffixTap: () {},
-                    onSubmitted: (String text) {},
-                  ),
+                ),
+                AnimSearchBar(
+                  width: 200,
+                  textController: _searchController,
+                  onSuffixTap: () {},
+                  onSubmitted: (String text) {},
                 ),
               ],
             ),
