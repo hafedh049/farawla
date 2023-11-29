@@ -25,6 +25,7 @@ class _FarawlaState extends State<Farawla> {
 
   @override
   void dispose() {
+    _keyFocusNode.dispose();
     super.dispose();
   }
 
