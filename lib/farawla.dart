@@ -65,6 +65,7 @@ class _FarawlaState extends State<Farawla> {
             WindowTitleBarBox(
               child: Row(
                 children: <Widget>[
+                  Icon(FontAwesomeIcons.cubes),
                   Expanded(child: MoveWindow()),
                   MinimizeWindowButton(),
                   MaximizeWindowButton(),
