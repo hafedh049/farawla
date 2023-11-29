@@ -176,6 +176,8 @@ class _FarawelsState extends State<Farawels> {
         if (event is RawKeyDownEvent) {
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
             await tool();
+            // ignore: use_build_context_synchronously
+            showSnack('New Category Is Added Successfully', context);
           }
         }
       },
