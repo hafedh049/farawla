@@ -72,8 +72,6 @@ class _FarawlaState extends State<Farawla> {
                   Expanded(child: MoveWindow()),
                   Flexible(
                     child: Container(
-                      margin: const EdgeInsets.only(top: 8),
-                      padding: const EdgeInsets.all(8),
                       child: TextField(
                         controller: null,
                         decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)), suffixIcon: IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.x))),
