@@ -21,7 +21,6 @@ class Farawla extends StatefulWidget {
 class _FarawlaState extends State<Farawla> {
   final GlobalKey<State> _tilesKey = GlobalKey<State>();
   final ScreenshotController _screenshotController = ScreenshotController();
-  final TextEditingController _searchController = TextEditingController();
   final FocusNode _keyFocusNode = FocusNode();
 
   @override
