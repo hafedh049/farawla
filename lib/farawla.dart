@@ -55,7 +55,7 @@ class _FarawlaState extends State<Farawla> {
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
             _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${const UuidV8().generate()}.png');
             // ignore: use_build_context_synchronously
-            showSnack('Last Cell Is Removed Successfully', context);
+            showSnack('A Full Screen Snapshot Is Taken Successfully', context);
           }
         }
       },
