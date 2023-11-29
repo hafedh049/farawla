@@ -24,6 +24,11 @@ class _FarawlaState extends State<Farawla> {
   final FocusNode _keyFocusNode = FocusNode();
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
       autofocus: true,
