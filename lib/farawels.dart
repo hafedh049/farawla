@@ -195,7 +195,7 @@ class _FarawelsState extends State<Farawels> {
             Row(
               children: <Widget>[
                 const Spacer(),
-                const Spacer(),s
+                const Spacer(),
                 Stack(
                   alignment: AlignmentDirectional.center,
                   children: <Widget>[
