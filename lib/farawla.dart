@@ -65,22 +65,26 @@ class _FarawlaState extends State<Farawla> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            WindowTitleBarBox(
-              child: SizedBox(
-                height: 60,
-                child: Row(
-                  children: <Widget>[
-                    const SizedBox(width: 10),
-                    const Icon(FontAwesomeIcons.cubes, size: 15, color: pink),
-                    const SizedBox(width: 5),
-                    const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
-                    Expanded(child: MoveWindow()),
-                    MinimizeWindowButton(),
-                    MaximizeWindowButton(),
-                    CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                  ],
+            Stack(
+              children: <Widget>[
+                WindowTitleBarBox(
+                  child: SizedBox(
+                    height: 60,
+                    child: Row(
+                      children: <Widget>[
+                        const SizedBox(width: 10),
+                        const Icon(FontAwesomeIcons.cubes, size: 15, color: pink),
+                        const SizedBox(width: 5),
+                        const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
+                        Expanded(child: MoveWindow()),
+                        MinimizeWindowButton(),
+                        MaximizeWindowButton(),
+                        CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
             Expanded(
               child: Padding(
