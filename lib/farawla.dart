@@ -48,6 +48,24 @@ class _FarawlaState extends State<Farawla> {
                 return true;
               },
             ),
+            KeyboardNumPadAddIntent: CallbackAction<KeyboardNumPadAddIntent>(
+              onInvoke: (KeyboardNumPadAddIntent intent) async {
+                final List data = boxes[widget.boxIndex].get("data");
+                data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+                await boxes[widget.boxIndex].put("data", data);
+                _tilesKey.currentState!.setState(() {});
+                return true;
+              },
+            ),
+            KeyboardNumPadAddIntent: CallbackAction<KeyboardNumPadAddIntent>(
+              onInvoke: (KeyboardNumPadAddIntent intent) async {
+                final List data = boxes[widget.boxIndex].get("data");
+                data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+                await boxes[widget.boxIndex].put("data", data);
+                _tilesKey.currentState!.setState(() {});
+                return true;
+              },
+            ),
           },
           child: Scaffold(
             body: Column(
