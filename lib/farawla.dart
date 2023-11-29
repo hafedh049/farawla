@@ -1,5 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:farawla/farawla_container.dart';
+import 'package:farawla/utils/callbacks.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -39,6 +40,8 @@ class _FarawlaState extends State<Farawla> {
             final List data = boxes[widget.boxIndex].get("data");
             data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
             await boxes[widget.boxIndex].put("data", data);
+            // ignore: use_build_context_synchronously
+            showSnack('New Cell Is Added', context);
             _tilesKey.currentState!.setState(() {});
           }
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadSubtract) {
