@@ -64,6 +64,7 @@ class _FarawlaState extends State<Farawla> {
       },
       child: Scaffold(
         body: Stack(
+          alignment: AlignmentDirectional.topCenter,
           children: <Widget>[
             Column(
               children: <Widget>[
