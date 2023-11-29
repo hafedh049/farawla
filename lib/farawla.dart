@@ -64,7 +64,7 @@ class _FarawlaState extends State<Farawla> {
       },
       child: Scaffold(
         body: Stack(
-          children: [
+          children: <Widget>[
             Column(
               children: <Widget>[
                 WindowTitleBarBox(
