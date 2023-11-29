@@ -29,7 +29,6 @@ class _FarawelsState extends State<Farawels> {
     final GlobalKey<State> pictureKey = GlobalKey<State>();
     Uint8List picture = (await rootBundle.load("assets/default.jpg")).buffer.asUint8List();
     final TextEditingController titleController = TextEditingController();
-    final FocusNode _keyFocusNode = FocusNode();
 
     // ignore: use_build_context_synchronously
     await showModalBottomSheet(
