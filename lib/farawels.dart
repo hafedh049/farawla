@@ -28,7 +28,6 @@ class _FarawelsState extends State<Farawels> {
     @override
     void dispose() {
       _keyFocusNode.dispose();
-
       super.dispose();
     }
 
