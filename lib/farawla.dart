@@ -82,12 +82,6 @@ class _FarawlaState extends State<Farawla> {
                     ],
                   ),
                 ),
-                AnimSearchBar(
-                  width: 200,
-                  textController: _searchController,
-                  onSuffixTap: () {},
-                  onSubmitted: (String text) {},
-                ),
               ],
             ),
             Expanded(
