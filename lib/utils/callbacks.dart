@@ -23,7 +23,7 @@ void showSnack(String msg, BuildContext context) {
     backgroundColor: Colors.transparent,
     content: AwesomeSnackbarContent(
       title: 'Hi!',
-      message: 'This is an example error message that will be shown in the body of snackbar!',
+      message: msg,
       contentType: ContentType.failure,
     ),
   );
