@@ -50,7 +50,7 @@ class _FarawlaState extends State<Farawla> {
             _tilesKey.currentState!.setState(() {});
           }
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
-            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${UuidV8().generate()}.png');
+            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${const UuidV8().generate()}.png');
           }
         }
       },
