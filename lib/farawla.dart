@@ -38,91 +38,109 @@ class _FarawlaState extends State<Farawla> {
           }
         }
       },
-      child: Scaffold(
-        body: Column(
-          children: <Widget>[
-            WindowTitleBarBox(
-              child: Row(
-                children: <Widget>[
-                  Expanded(child: MoveWindow()),
-                  MinimizeWindowButton(),
-                  MaximizeWindowButton(),
-                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: <Widget>[
-                    Row(
+      child: Shortcuts(
+        shortcuts: const <ShortcutActivator, KeyboardIntent>{
+          SingleActivator(LogicalKeyboardKey.numpadAdd, control: true): KeyboardNumPaddAddIntent(),
+          SingleActivator(LogicalKeyboardKey.enter, control: true): KeyboardIntent(),
+          SingleActivator(LogicalKeyboardKey.numpadEnter, control: true): KeyboardIntent(),
+        },
+        child: Actions(
+          actions: <Type, Action<Intent>>{},
+          child: Scaffold(
+            body: Column(
+              children: <Widget>[
+                WindowTitleBarBox(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(child: MoveWindow()),
+                      MinimizeWindowButton(),
+                      MaximizeWindowButton(),
+                      CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
                       children: <Widget>[
-                        InkWell(
-                          highlightColor: transparent,
-                          hoverColor: transparent,
-                          splashColor: transparent,
-                          onTap: () => Navigator.pop(context),
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
-                            child: const Icon(FontAwesomeIcons.chevronLeft, size: 20, color: white),
-                          ),
-                        ),
-                        const Spacer(),
-                        Stack(
-                          alignment: AlignmentDirectional.center,
+                        Row(
                           children: <Widget>[
                             InkWell(
                               highlightColor: transparent,
                               hoverColor: transparent,
                               splashColor: transparent,
-                              onTap: () async {
-                                final List data = boxes[widget.boxIndex].get("data");
-                                data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
-                                await boxes[widget.boxIndex].put("data", data);
-                                _tilesKey.currentState!.setState(() {});
-                              },
+                              onTap: () => Navigator.pop(context),
                               child: Container(
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
-                                child: const Icon(FontAwesomeIcons.plus, size: 20, color: white),
+                                child: const Icon(FontAwesomeIcons.chevronLeft, size: 20, color: white),
                               ),
                             ),
-                            IgnorePointer(ignoring: true, child: LottieBuilder.asset("assets/add.json", width: 60, height: 60)),
+                            const Spacer(),
+                            Stack(
+                              alignment: AlignmentDirectional.center,
+                              children: <Widget>[
+                                InkWell(
+                                  highlightColor: transparent,
+                                  hoverColor: transparent,
+                                  splashColor: transparent,
+                                  onTap: () async {
+                                    final List data = boxes[widget.boxIndex].get("data");
+                                    data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+                                    await boxes[widget.boxIndex].put("data", data);
+                                    _tilesKey.currentState!.setState(() {});
+                                  },
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
+                                    child: const Icon(FontAwesomeIcons.plus, size: 20, color: white),
+                                  ),
+                                ),
+                                IgnorePointer(ignoring: true, child: LottieBuilder.asset("assets/add.json", width: 60, height: 60)),
+                              ],
+                            ),
                           ],
+                        ),
+                        const SizedBox(height: 10),
+                        StatefulBuilder(
+                          key: _tilesKey,
+                          builder: (BuildContext context, void Function(void Function()) _) {
+                            return Expanded(
+                              child: boxes[widget.boxIndex].get("data").isEmpty
+                                  ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
+                                  : Screenshot(
+                                      controller: _screenshotController,
+                                      child: ListView.builder(
+                                        shrinkWrap: true,
+                                        itemCount: boxes[widget.boxIndex].get("data").length,
+                                        itemBuilder: (BuildContext context, int index) {
+                                          return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
+                                        },
+                                      ),
+                                    ),
+                            );
+                          },
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
-                    StatefulBuilder(
-                      key: _tilesKey,
-                      builder: (BuildContext context, void Function(void Function()) _) {
-                        return Expanded(
-                          child: boxes[widget.boxIndex].get("data").isEmpty
-                              ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
-                              : Screenshot(
-                                  controller: _screenshotController,
-                                  child: ListView.builder(
-                                    shrinkWrap: true,
-                                    itemCount: boxes[widget.boxIndex].get("data").length,
-                                    itemBuilder: (BuildContext context, int index) {
-                                      return Padding(padding: const EdgeInsets.all(24), child: FarawlaContainer(data: boxes[widget.boxIndex].get("data")[index], boxIndex: widget.boxIndex, tileIndex: index));
-                                    },
-                                  ),
-                                ),
-                        );
-                      },
-                    ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
+}
+
+class KeyboardNumPaddAddIntent extends Intent {
+  const KeyboardNumPaddAddIntent();
+}
+
+class KeyboardNumPaddAddIntent extends Intent {
+  const KeyboardNumPaddAddIntent();
 }
