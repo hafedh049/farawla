@@ -137,14 +137,6 @@ class _FarawlaState extends State<Farawla> {
   }
 }
 
-class KeyboardNumPadAddIntent extends Intent {
-  const KeyboardNumPadAddIntent();
-}
-
-class KeyboardNumPadEnterIntent extends Intent {
-  const KeyboardNumPadEnterIntent();
-}
-
-class  extends Intent {
-  const KeyboardNumPaddAddIntent();
+class KeyboardNumPaddAddIntent extends Intent {
+  const KeyboardIntent();
 }
