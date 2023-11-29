@@ -48,6 +48,8 @@ class _FarawlaState extends State<Farawla> {
             final List data = boxes[widget.boxIndex].get("data");
             data.removeLast();
             await boxes[widget.boxIndex].put("data", data);
+            // ignore: use_build_context_synchronously
+            showSnack('New Cell Is Added Successfully', context);
             _tilesKey.currentState!.setState(() {});
           }
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
