@@ -192,29 +192,25 @@ class _FarawelsState extends State<Farawels> {
                 ],
               ),
             ),
-            Stack(
+            Row(
               children: <Widget>[
-                Row(
+                const Spacer(),
+                Stack(
+                  alignment: AlignmentDirectional.center,
                   children: <Widget>[
-                    const Spacer(),
-                    Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: <Widget>[
-                        InkWell(
-                          highlightColor: transparent,
-                          hoverColor: transparent,
-                          splashColor: transparent,
-                          onTap: tool,
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
-                            child: const Icon(FontAwesomeIcons.plus, size: 20, color: white),
-                          ),
-                        ),
-                        IgnorePointer(ignoring: true, child: LottieBuilder.asset("assets/add.json", width: 60, height: 60)),
-                      ],
+                    InkWell(
+                      highlightColor: transparent,
+                      hoverColor: transparent,
+                      splashColor: transparent,
+                      onTap: tool,
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: pink.withOpacity(.6)),
+                        child: const Icon(FontAwesomeIcons.plus, size: 20, color: white),
+                      ),
                     ),
+                    IgnorePointer(ignoring: true, child: LottieBuilder.asset("assets/add.json", width: 60, height: 60)),
                   ],
                 ),
               ],
