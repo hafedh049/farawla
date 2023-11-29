@@ -45,7 +45,7 @@ class _FarawlaState extends State<Farawla> {
         },
         child: Actions(
           actions: <Type, Action<Intent>>{
-            KeyboardNumPadAddIntent: CallbackAction(
+            KeyboardNumPadAddIntent: CallbackAction<KeyboardNumPadAddIntent>(
               onInvoke: (x) {},
             ),
           },
