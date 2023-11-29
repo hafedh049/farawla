@@ -66,6 +66,7 @@ class _FarawlaState extends State<Farawla> {
         body: Column(
           children: <Widget>[
             Stack(
+              alignment: AlignmentDirectional.center,
               children: <Widget>[
                 WindowTitleBarBox(
                   child: SizedBox(
