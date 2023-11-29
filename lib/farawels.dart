@@ -206,6 +206,7 @@ class _FarawelsState extends State<Farawels> {
                   textFieldColor: null,
                   textFieldIconColor: pink,
                   color: null,
+                  boxShadow: false,
                   searchIconColor: pink,
                   style: const TextStyle(fontSize: 14, color: pink),
                 ),
