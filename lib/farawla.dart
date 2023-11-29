@@ -66,6 +66,8 @@ class _FarawlaState extends State<Farawla> {
               child: Row(
                 children: <Widget>[
                   const Icon(FontAwesomeIcons.cubes, size: 10, color: pink),
+                  const SizedBox(width: 5),
+                  const Text("Cancel", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
                   MinimizeWindowButton(),
                   MaximizeWindowButton(),
