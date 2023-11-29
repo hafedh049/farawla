@@ -72,6 +72,7 @@ class _FarawlaState extends State<Farawla> {
                   Expanded(child: MoveWindow()),
                   Flexible(
                     child: TextField(
+                      controller: ,
                       decoration: InputDecoration(border: OutlineInputBorder()),
                     ),
                   ),
