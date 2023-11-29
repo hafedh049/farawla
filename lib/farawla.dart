@@ -65,7 +65,7 @@ class _FarawlaState extends State<Farawla> {
             WindowTitleBarBox(
               child: Row(
                 children: <Widget>[
-                  const Icon(FontAwesomeIcons.cubes, size: 10, color: pink),
+                  const Icon(FontAwesomeIcons.cubes, size: 15, color: pink),
                   const SizedBox(width: 5),
                   const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
                   Expanded(child: MoveWindow()),
