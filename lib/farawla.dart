@@ -120,7 +120,7 @@ class _FarawlaState extends State<Farawla> {
                     StatefulBuilder(
                       key: _tilesKey,
                       builder: (BuildContext context, void Function(void Function()) _) {
-                        return Expanded(
+                        return Positioned.fill(
                           child: boxes[widget.boxIndex].get("data").isEmpty
                               ? const Center(child: Text("No Tiles Yet.", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500, color: pink)))
                               : Screenshot(
