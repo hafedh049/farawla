@@ -45,7 +45,7 @@ class _FarawlaState extends State<Farawla> {
           SingleActivator(LogicalKeyboardKey.numpadEnter, control: true): KeyboardIntent(),
         },
         child: Actions(
-          actions: {},
+          actions: ,
           child: Scaffold(
             body: Column(
               children: <Widget>[
