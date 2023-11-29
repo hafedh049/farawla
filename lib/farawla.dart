@@ -41,7 +41,7 @@ class _FarawlaState extends State<Farawla> {
             data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
             await boxes[widget.boxIndex].put("data", data);
             // ignore: use_build_context_synchronously
-            showSnack('New Cell Is Added', context);
+            showSnack('New Cell Is Added Successfully', context);
             _tilesKey.currentState!.setState(() {});
           }
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadSubtract) {
