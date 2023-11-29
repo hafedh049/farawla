@@ -73,7 +73,13 @@ class _FarawlaState extends State<Farawla> {
                   Flexible(
                     child: TextField(
                       controller: null,
-                      decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)), suffixIcon: IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.x))),
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                        suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: Icon(FontAwesomeIcons.x),
+                        ),
+                      ),
                     ),
                   ),
                   Expanded(child: MoveWindow()),
