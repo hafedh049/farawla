@@ -19,6 +19,12 @@ class Farawels extends StatefulWidget {
 class _FarawelsState extends State<Farawels> {
   final GlobalKey<State> _boxesKey = GlobalKey<State>();
 
+  @override
+  void dispose() {
+    _keyFocusNode.dispose();
+    super.dispose();
+  }
+
   Future<void> tool() async {
     final GlobalKey<State> pictureKey = GlobalKey<State>();
     Uint8List picture = (await rootBundle.load("assets/default.jpg")).buffer.asUint8List();
