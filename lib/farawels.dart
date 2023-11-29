@@ -205,7 +205,7 @@ class _FarawelsState extends State<Farawels> {
                   onSubmitted: (String text) {},
                   textFieldColor: null,
                   textFieldIconColor: pink,
-                  color: pink,
+                  color: null,
                   searchIconColor: pink,
                 ),
                 const Spacer(),
