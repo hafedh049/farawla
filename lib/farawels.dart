@@ -139,6 +139,8 @@ class _FarawelsState extends State<Farawels> {
                               "picture": picture,
                             },
                           );
+                          // ignore: use_build_context_synchronously
+                          showSnack('New Cell Is Added Successfully', context);
                           _boxesKey.currentState!.setState(() {});
                           // ignore: use_build_context_synchronously
                           Navigator.pop(context);
