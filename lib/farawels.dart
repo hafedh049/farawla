@@ -199,16 +199,6 @@ class _FarawelsState extends State<Farawels> {
             Row(
               children: <Widget>[
                 const Spacer(),
-                SearchBarAnimation(
-                  hintText: "Pick your language",
-                  onChanged: (String text) => searchKey.currentState!.setState(() {}),
-                  textEditingController: _searchController,
-                  isOriginalAnimation: true,
-                  buttonWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                  trailingWidget: const Icon(FontAwesomeIcons.magnifyingGlass, size: 15),
-                  secondaryButtonWidget: const Icon(FontAwesomeIcons.x, size: 15),
-                ),
-                const Spacer(),
                 Stack(
                   alignment: AlignmentDirectional.center,
                   children: <Widget>[
