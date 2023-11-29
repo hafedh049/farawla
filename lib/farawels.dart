@@ -161,7 +161,8 @@ class _FarawelsState extends State<Farawels> {
   @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
-      focusNode: FocusNode(),
+      autofocus: true,
+      focusNode: _keyFocusNode,
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
