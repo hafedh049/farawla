@@ -64,7 +64,6 @@ class _FarawlaState extends State<Farawla> {
       },
       child: Scaffold(
         body: Stack(
-          alignment: AlignmentDirectional.topCenter,
           children: <Widget>[
             Column(
               children: <Widget>[
@@ -152,13 +151,16 @@ class _FarawlaState extends State<Farawla> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 30,
-              child: AnimSearchBar(
-                width: 200,
-                textController: _searchController,
-                onSuffixTap: () {},
-                onSubmitted: (String text) {},
+            Align(
+              alignment: Alignment.center,
+              child: SizedBox(
+                height: 30,
+                child: AnimSearchBar(
+                  width: 200,
+                  textController: _searchController,
+                  onSuffixTap: () {},
+                  onSubmitted: (String text) {},
+                ),
               ),
             ),
           ],
