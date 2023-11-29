@@ -9,6 +9,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:uuid/v8.dart';
 
 class Farawla extends StatefulWidget {
   const Farawla({super.key, required this.boxIndex});
@@ -49,7 +50,7 @@ class _FarawlaState extends State<Farawla> {
             _tilesKey.currentState!.setState(() {});
           }
           if (event.isControlPressed && const <LogicalKeyboardKey>[LogicalKeyboardKey.numpadEnter, LogicalKeyboardKey.enter].contains(event.logicalKey)) {
-            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${}.png');
+            _screenshotController.captureAndSave((await getApplicationDocumentsDirectory()).path, fileName: '${UuidV8().generate()}.png');
           }
         }
       },
