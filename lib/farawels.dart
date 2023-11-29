@@ -20,6 +20,8 @@ class Farawels extends StatefulWidget {
 class _FarawelsState extends State<Farawels> {
   final GlobalKey<State> _boxesKey = GlobalKey<State>();
   final FocusNode _keyFocusNode = FocusNode();
+    final TextEditingController _searchController = TextEditingController();
+
 
   @override
   void dispose() {
