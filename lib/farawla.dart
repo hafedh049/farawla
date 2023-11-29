@@ -33,7 +33,7 @@ class _FarawlaState extends State<Farawla> {
   Widget build(BuildContext context) {
     return RawKeyboardListener(
       autofocus: true,
-      focusNode: FocusNode(),
+      focusNode: _keyFocusNode,
       onKey: (RawKeyEvent event) async {
         if (event is RawKeyDownEvent) {
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadAdd) {
