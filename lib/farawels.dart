@@ -25,12 +25,6 @@ class _FarawelsState extends State<Farawels> {
     final TextEditingController titleController = TextEditingController();
     final FocusNode _keyFocusNode = FocusNode();
 
-    @override
-    void dispose() {
-      _keyFocusNode.dispose();
-      super.dispose();
-    }
-
     // ignore: use_build_context_synchronously
     await showModalBottomSheet(
       context: context,
