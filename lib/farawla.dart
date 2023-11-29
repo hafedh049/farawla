@@ -44,7 +44,7 @@ class _FarawlaState extends State<Farawla> {
           }
           if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadSubtract) {
             final List data = boxes[widget.boxIndex].get("data");
-            data.add(<dynamic, dynamic>{"language": "Python", "code": "", "explication": ""});
+            data.removeLast();
             await boxes[widget.boxIndex].put("data", data);
             _tilesKey.currentState!.setState(() {});
           }
