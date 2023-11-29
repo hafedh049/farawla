@@ -1,3 +1,4 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:farawla/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
