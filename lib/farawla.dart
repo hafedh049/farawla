@@ -54,7 +54,7 @@ class _FarawlaState extends State<Farawla> {
             showSnack('Last Cell Is Removed Successfully', context);
             _tilesKey.currentState!.setState(() {});
           }
-          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.numpadSubtract) {
+          if (event.isControlPressed && event.logicalKey == LogicalKeyboardKey.goBack) {
             final List data = boxes[widget.boxIndex].get("data");
             data.removeLast();
             await boxes[widget.boxIndex].put("data", data);
