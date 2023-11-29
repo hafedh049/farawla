@@ -66,27 +66,30 @@ class _FarawlaState extends State<Farawla> {
         body: Column(
           children: <Widget>[
             WindowTitleBarBox(
-              child: Row(
-                children: <Widget>[
-                  const SizedBox(width: 10),
-                  const Icon(FontAwesomeIcons.cubes, size: 15, color: pink),
-                  const SizedBox(width: 5),
-                  const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
-                  Expanded(child: MoveWindow()),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: AnimSearchBar(
-                      width: 200,
-                      textController: _searchController,
-                      onSuffixTap: () {},
-                      onSubmitted: (String text) {},
+              child: SizedBox(
+                height: 60,
+                child: Row(
+                  children: <Widget>[
+                    const SizedBox(width: 10),
+                    const Icon(FontAwesomeIcons.cubes, size: 15, color: pink),
+                    const SizedBox(width: 5),
+                    const Text("Farawla", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: pink)),
+                    Expanded(child: MoveWindow()),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: AnimSearchBar(
+                        width: 200,
+                        textController: _searchController,
+                        onSuffixTap: () {},
+                        onSubmitted: (String text) {},
+                      ),
                     ),
-                  ),
-                  Expanded(child: MoveWindow()),
-                  MinimizeWindowButton(),
-                  MaximizeWindowButton(),
-                  CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
-                ],
+                    Expanded(child: MoveWindow()),
+                    MinimizeWindowButton(),
+                    MaximizeWindowButton(),
+                    CloseWindowButton(colors: WindowButtonColors(mouseOver: pink)),
+                  ],
+                ),
               ),
             ),
             Expanded(
